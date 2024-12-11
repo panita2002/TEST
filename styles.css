@@ -8,6 +8,17 @@
 .btn-toggle {
   text-align: left;
   /* จัดข้อความในปุ่มชิดซ้าย */
+  display: inline-block;
+  padding: fixed;
+  background-color: #fff; /* สีพื้นหลัง */
+  color: #000000; /* สีตัวอักษร */
+  text-decoration: none; /* ลบเส้นใต้ */
+  border-radius: 5px; /* มุมโค้ง */
+  text-align: left;
+  transition: background-color 0.3s;
+}
+.btn-toggle :hover {
+  background-color: #fff; /* สีเมื่อ hover */
 }
 
 
@@ -30,4 +41,18 @@
   cursor: pointer;
 
 }
+.btn-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #fff; /* สีพื้นหลัง */
+  color: #000000; /* สีตัวอักษร */
+  text-decoration: none; /* ลบเส้นใต้ */
+  border-radius: 5px; /* มุมโค้ง */
+  font-size: 16px;
+  text-align: left;
+  transition: background-color 0.3s;
+}
 
+.btn-link:hover {
+  background-color: #fff; /* สีเมื่อ hover */
+}

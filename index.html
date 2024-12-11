@@ -35,9 +35,7 @@
             <div class="collapse" id="configAndParameterCollapse">
               <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                 <li>
-                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                    data-bs-target="#Introduction" aria-expanded="false">Introduction
-                  </button>
+                  <a href="DTC-GSB/Introduction.html"class="btn-link">Introduction</a>
                 </li>
                 <li>
                   <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
@@ -50,34 +48,31 @@
                 <div class="collapse" id="setupEnvironmentVariable">
                   <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                     <li>
-                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#environmentVariable" aria-expanded="false">
-                        <ul class="sub-menu">
-                        <i class="bi bi-dot">
-                        </i>
-                        Environment variable บนเครื่องกลุ่ม custodian service
-                        </ul>
-                      </button>
+                        <a href="DTC-GSB/Environment _variable.html"class="btn-link">
+                          <ul class="sub-menu">
+                            <i class="bi bi-dot">
+                            Environment variable บนเครื่องกลุ่ม custodian service
+                            </i>
+                          </ul>
+                        </a>
                     </li>
                     <li>
-                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#fireWallPort" aria-expanded="false">
+                      <a href="DTC-GSB/FirewallPort.html"class="btn-link">
                         <ul class="sub-menu">
-                        <i class="bi bi-dot">
-                        </i>
-                        Firewall Port ส่วนที่เกี่ยวกับ Application
+                          <i class="bi bi-dot">
+                            Firewall Port ส่วนที่เกี่ยวกับ Application
+                          </i>
                         </ul>
-                      </button>
+                      </a>
                     </li>
                     <li>
-                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                        data-bs-target="#directoryStructure" aria-expanded="false">
+                      <a href="DTC-GSB/Directory.html"class="btn-link">
                         <ul class="sub-menu">
-                        <i class="bi bi-dot">
-                        </i>
-                        Directory structure และ Permission
+                          <i class="bi bi-dot">
+                            Directory structure และ Permission
+                          </i>
                         </ul>
-                      </button>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -94,24 +89,22 @@
           <div class="collapse" id="setupUserandGroup">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li>
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                  data-bs-target="#userAndGroup" aria-expanded="false">
+                <a href="DTC-GSB/SIT.html"class="btn-link">
                   <ul class="sub-menu">
-                  <i class="bi bi-dot">
-                  </i>
-                  User และ Group สำหรับ SIT Environment
+                    <i class="bi bi-dot">
+                      User และ Group สำหรับ SIT Environment
+                    </i>
                   </ul>
-                </button>
+                </a>
               </li>
               <li>
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                  data-bs-target="#uatEnviron" aria-expanded="false">
+                <a href="DTC-GSB/UAT.html"class="btn-link">
                   <ul class="sub-menu">
-                  <i class="bi bi-dot">
-                  </i>
-                  User และ Group สำหรับ UAT Environment
+                    <i class="bi bi-dot">
+                      User และ Group สำหรับ UAT Environment
+                    </i>
                   </ul>
-                </button>
+                </a>
               </li>
               <li>
                 <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
@@ -686,87 +679,7 @@
     <!-- Content -->
     <div class="col-md-9 p-4" id="content-tainer">
       <!-- Proxy Server and Configuration -->
-      <div id="Introduction" class="mb-5">
-        <h2>ข้อมูลระบบเบื้องต้น</h2>
-        <p>
-          ระบบ Custodian เป็นระบบสำหรับรับฝากและเก็บรักษาหลักทรัพย์ รวมถึงบริการด้านหลักทรัพย์อื่นๆ เช่น ถอน โอน รับโอน
-          จำนำ อายัด เป็นต้น รวมถึง รองรับการเปิดบัญชีหลักทรัพย์ พิมพ์สมุดผู้ฝากพันธบัตรรัฐบาล(พันธบัตรออมทรัพย์)
-          เพื่อให้บริการผู้รับฝากหลักทรัพย์ โดยผู้ใช้งานในระบบ แบ่งเป็น 2 กลุ่มคือ
-        </p>
-        <ul>
-          • เข้าใช้งานระบบผ่าน Browser สำหรับพิมพ์สมุดผู้ฝากพันธบัตรรัฐบาลและ ธุรกรรมต่างๆ (สาขา และ
-          ฝ่ายธุรกิจการเงินส่วนบุคคล) <br>
-          • เข้าใช้งานผ่าน Windows Application เพื่อทำการปิดสิ้นวัน รวมถึงการรวบรวมข้อมูลส่งต่อไปยัง TSD
-          (ศูนย์รับฝากหลักทรัพย์) โดย ฝ่ายปฏิบัติการลงทุน และฝ่ายธุรกิจการลงทุน
-        </ul>
-      </div>
 
-      <div id="environmentVariable" class="mb-5">
-        <h2>Environment variable บนเครื่องกลุ่ม custodian service </h2>
-        <ul>
-          <li>
-            <strong>
-              Client
-            </strong>
-          </li>
-        <center><img src="IMG/01.png" alt="Installation Guide" class="mb-5" width="700"></center>
-        </ul>
-        <ul>
-          <li>
-            <strong>
-              Proxy Server
-            </strong>
-          </li>
-        <center><img src="IMG/proxy.png" alt="Installation Guide" class="mb-5" width="700"></center>
-        </ul>
-        <ul>
-          <li><strong>Application Server</strong></li>
-        <center><img src="IMG/app.png" alt="Installation Guide" class="mb-5" width="700"></center>
-        </ul>
-        <ul>
-          <li>
-            <strong>
-              Database Server
-            </strong>
-          </li>
-        <center><img src="IMG/data.png" alt="Installation Guide" class="mb-5" width="700"></center>
-        </ul>
-        <ul>
-          <li>
-            <strong>
-              Branch
-            </strong>
-          </li>
-        <center><img src="IMG/branch.png" alt="Installation Guide" class="mb-5" width="700"></center>
-        </ul>
-      </div>
-
-      <div id="fireWallPort" class="mb-5">
-        <h2>Firewall Port ส่วนที่เกี่ยวกับ Application</h2>
-        <ul>
-          <center><img src="IMG/firewall.png" alt="Installation Guide" class="mb-5" width="700"></center>
-        </ul>
-      </div>
-
-      <div id="directoryStructure" class="mb-5">
-        <h2>Directory structure และ Permission</h2>
-        <ul>
-        <center><img src="IMG/direc.png" alt="Installation Guide" class="mb-5" width="700"></center>
-         </ul>
-        <ul>
-        <center><img src="IMG/direc2.png" alt="Installation Guide" class="mb-5" width="700"></center>
-        </ul>
-      </div>
-
-      <div id="userAndGroup" class="mb-5">
-        <h2>User และ Group สำหรับ SIT Environment</h2>
-        <p>
-          SIT Environment
-        </p>
-        <ul>
-          <center><img src="IMG/sit.png" alt="Installation Guide" class="mb-5" width="650"></center>
-        </ul>
-      </div>
 
       <div id="uatEnviron" class="mb-5">
         <h2>User และ Group สำหรับ UAT Environment</h2>
