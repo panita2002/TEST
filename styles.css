@@ -1,0 +1,33 @@
+/* Sidebar styles */
+.sidebar {
+  text-align: left;
+  /* จัดข้อความชิดซ้าย */
+
+}
+
+.btn-toggle {
+  text-align: left;
+  /* จัดข้อความในปุ่มชิดซ้าย */
+}
+
+
+#content-tainer{
+  margin-left: 300px; /* ระยะห่างจากด้านซ้ายเท่ากับความกว้าง Sidebar */
+  height: 100vh; /* เต็มความสูงของหน้าจอ */
+  overflow-y: auto; /* เลื่อนเฉพาะแนวตั้งได้ */
+  overflow-x: hidden; /* ปิดการเลื่อนแนวนอน */
+  padding: 20px; /* ระยะห่างภายใน */
+  cursor: pointer;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;  /* Adjust based on your sidebar width */
+  height: 100vh;
+  overflow-y: auto;
+  cursor: pointer;
+
+}
+

@@ -1,0 +1,1087 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>คู่มือการติดตั้ง</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-9 p-4" id="sidebar" style="height: 100vh; overflow-y: auto;">
+        <a href="/"
+          class="d-flex flex-column align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+          <img src="IMG/img1.png" alt="Installation Guide" class="mb-2" width="150">
+          <span class="fs-5 fw-semibold">เอกสารคู่มือการติดตั้งระบบงาน Custodian และการกำหนดค่าพารามิเตอร์ต่าง ๆ
+          </span>
+        </a>
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
+              data-bs-target="#configAndParameterCollapse" aria-expanded="false">
+              <span class="fw-bold">Configuration and Parameter Setting
+              </span>
+            </button>
+            <div class="collapse" id="configAndParameterCollapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li>
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#Introduction" aria-expanded="false">Introduction
+                  </button>
+                </li>
+                <li>
+                  <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#setupEnvironmentVariable" aria-expanded="false">
+                    <i class="dropdown-toggle">
+                    </i>
+                    Setup Environment Variable
+                  </button>
+                </li>
+                <div class="collapse" id="setupEnvironmentVariable">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li>
+                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#environmentVariable" aria-expanded="false">
+                        <ul class="sub-menu">
+                        <i class="bi bi-dot">
+                        </i>
+                        Environment variable บนเครื่องกลุ่ม custodian service
+                        </ul>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#fireWallPort" aria-expanded="false">
+                        <ul class="sub-menu">
+                        <i class="bi bi-dot">
+                        </i>
+                        Firewall Port ส่วนที่เกี่ยวกับ Application
+                        </ul>
+                      </button>
+                    </li>
+                    <li>
+                      <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                        data-bs-target="#directoryStructure" aria-expanded="false">
+                        <ul class="sub-menu">
+                        <i class="bi bi-dot">
+                        </i>
+                        Directory structure และ Permission
+                        </ul>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+          </li>
+          <li>
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#setupUserandGroup" aria-expanded="false">
+              <i 
+                class="dropdown-toggle">
+              </i>
+              Setup User and Group
+            </button>
+          </li>
+          <div class="collapse" id="setupUserandGroup">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#userAndGroup" aria-expanded="false">
+                  <ul class="sub-menu">
+                  <i class="bi bi-dot">
+                  </i>
+                  User และ Group สำหรับ SIT Environment
+                  </ul>
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#uatEnviron" aria-expanded="false">
+                  <ul class="sub-menu">
+                  <i class="bi bi-dot">
+                  </i>
+                  User และ Group สำหรับ UAT Environment
+                  </ul>
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#productionEn" aria-expanded="false">
+                  <ul class="sub-menu">
+                  <i class="bi bi-dot">
+                  </i>
+                  User และ Group สำหรับ Production Environment
+                  </ul>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <li>
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#setupProxyServerandConfiguration" aria-expanded="false">
+              <i 
+                class="dropdown-toggle">
+              </i>
+              Setup Proxy Server and Configuration
+            </button>
+          </li>
+          <div
+            class="collapse" id="setupProxyServerandConfiguration">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#configFire" aria-expanded="false">
+                  <ul class="sub-menu">
+                  <i 
+                    class="bi bi-dot">
+                  </i>
+                  config firewall ของเครื่อง proxy
+                  </ul>
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#preConfig" aria-expanded="false">
+                  <ul class="sub-menu">
+                  <i 
+                    class="bi bi-dot">
+                  </i>
+                  ติดตั้ง Pre-config สำหรับ traefik
+                  </ul>
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#cerTi" aria-expanded="false">
+                  <ul class="sub-menu">
+                  <i 
+                    class="bi bi-dot">
+                  </i>
+                  การ config certificate
+                  </ul>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <li>
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#setupApplicationServerServiceandConfiguration" aria-expanded="false"
+              class="link-dark rounded">
+              <i 
+                class="dropdown-toggle">
+              </i>
+              Setup Application Server Service and Configuration
+            </button>
+          </li>
+          <div
+          class="collapse" id="setupApplicationServerServiceandConfiguration">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li>
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                data-bs-target="#configFi" aria-expanded="false">
+                <ul class="sub-menu">
+                <i 
+                  class="bi bi-dot">
+                </i>
+                config firewall ของเครื่อง Application Server
+                </ul>
+              </button>
+            </li>
+            <li>
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                data-bs-target="#initial" aria-expanded="false">
+                <ul class="sub-menu">
+                <i 
+                  class="bi bi-dot">
+                </i>
+                ปรับ initial java memory ของ tomcat
+              </ul>
+              </button>
+            </li>
+            <li>
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                data-bs-target="#setupPre" aria-expanded="false">
+                <ul class="sub-menu">
+                <i 
+                  class="bi bi-dot">
+                </i>
+                ติดตั้ง Pre-config สำหรับ tomcat (CTD-Front, Gateway)
+                </ul>
+              </button>
+            </li>
+            <li>
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                data-bs-target="#setupPreconfig" aria-expanded="false">
+                <ul class="sub-menu">
+                <i 
+                  class="bi bi-dot">
+                </i>
+                ติดตั้ง Pre-config สำหรับ Bonanza webapi
+                </ul>
+              </button>
+            </li>
+          </ul>
+        </div>
+          <li>
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#setupClient" aria-expanded="false">
+              <i 
+                class="dropdown-toggle">
+              </i>
+              Setup Client
+            </button>
+          </li>
+          <div
+            class="collapse" id="setupClient">
+            <ul
+              class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#boNanza" aria-expanded="false">
+                  <ol class="Sub-item">
+                    <i 
+                      class="bi bi-dot">
+                    </i>
+                    การติดตั้งระบบ Bonanza Custodian
+                  </ol>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="collapse" id="boNanza">
+            <ul
+              class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#step" aria-expanded="false">
+                  <ul class="sub-sub-sub-item">
+                    <i class="bi bi-dot">
+                      ขั้นตอนการเตรียมระบบก่อนติดตั้ง
+                    </i>
+                  </ul>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="collapse" id="boNanza">
+            <ul
+              class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#setup.net" aria-expanded="false">
+                  <ul class="sub-sub-sub-item">
+                    <i class="bi bi-dot">
+                      ติดตั้ง .NET
+                    </i>
+                  </ul>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="collapse" id="boNanza">
+            <ul
+              class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#setbonanza" aria-expanded="false">
+                  <ul class="sub-sub-sub-item">
+                    <i class="bi bi-dot">
+                      ติดตั้ง Bonanza Custodian Package
+                    </i>
+                  </ul>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="collapse" id="setupClient">
+            <ul
+              class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#odbc" aria-expanded="false">
+                  <ol class="Sub-item">
+                    <i 
+                      class="bi bi-dot">
+                    </i>
+                      การตั้งค่า ODBC
+                  </ol>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="collapse" id="setupClient">
+            <ul
+              class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#bonanzain" aria-expanded="false">
+                  <ol class="Sub-item">
+                    <i 
+                      class="bi bi-dot">
+                    </i>
+                      การกำหนดค่า Bonanza Investment Environment
+                  </ol>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="collapse" id="bonanzain">
+            <ul
+              class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#ENVS" aria-expanded="false">
+                  <ul class="sub-sub-sub-item">
+                    <i class="bi bi-dot">
+                      การกำหนดค่า ENVSetup.EXE
+                    </i>
+                  </ul>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="collapse" id="bonanzain">
+            <ul
+              class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="redlls" aria-expanded="false">
+                  <ul class="sub-sub-sub-item">
+                    <i class="bi bi-dot">
+                      การ Register DLLs ด้วย investReg.EXE
+                    </i>
+                  </ul>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="collapse" id="bonanzain">
+            <ul
+              class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="redlls" aria-expanded="false">
+                  <ol class="sub-sub-sub-item">
+                    <i 
+                      class="bi bi-dot">
+                      การกำหนดค่า Wmsl.lncubator.Configuration.UI.exe
+                    </i>
+                  </ol>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="collapse" id="bonanzain">
+            <ul
+              class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="test" aria-expanded="false">
+                  <ol class="sub-sub-sub-item">
+                    <i 
+                      class="bi bi-dot">
+                      ทดสอบการใช้งานระบบ
+                    </i>
+                  </ol>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <li>
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#setupPrinterAgent" aria-expanded="false">
+              <i 
+                class="dropdown-toggle">
+              </i>
+              Setup Printer Agent
+            </button>
+          </li>
+          <div
+          class="collapse" id="setupPrinterAgent">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li>
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                data-bs-target="#prerequisite" aria-expanded="false">
+                <ul class="sub-menu">
+                <i 
+                  class="bi bi-dot">
+                </i>
+                Prerequisite
+                </ul>
+              </button>
+            </li>
+            <li>
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                data-bs-target="#setupprinter" aria-expanded="false">
+                <ul class="sub-menu">
+                <i 
+                  class="bi bi-dot">
+                </i>
+                ขั้นตอนการติดตั้ง
+              </ul>
+              </button>
+            </li>
+            <li>
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                data-bs-target="#configPrint" aria-expanded="false">
+                <ul class="sub-menu">
+                <i 
+                  class="bi bi-dot">
+                </i>
+                การ Config ส่วน Printer Agent
+                </ul>
+              </button>
+            </li>
+            <li>
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                data-bs-target="#configCertificate" aria-expanded="false">
+                <ul class="sub-menu">
+                <i 
+                  class="bi bi-dot">
+                </i>
+                การ Config Certificate
+                </ul>
+              </button>
+            </li>
+            <li>
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                data-bs-target="#testerSystem" aria-expanded="false">
+                <ul class="sub-menu">
+                <i 
+                  class="bi bi-dot">
+                </i>
+                การทดสอบการเชื่อมต่อ
+                </ul>
+              </button>
+            </li>
+          </ul>
+        </div>
+          <li>
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+              data-bs-target="#createDatabaseandSetupUserDatabase" aria-expanded="false">
+              <i 
+                class="dropdown-toggle">
+              </i>
+              Create Database and Setup User Databese
+            </button>
+          </li>
+        <div
+          class="collapse" id="createDatabaseandSetupUserDatabase">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li>
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                data-bs-target="#configFirewall" aria-expanded="false">
+                <ul class="sub-menu">
+                <i 
+                  class="bi bi-dot">
+                </i>
+                Config Firewall ของเครื่อง Database
+                </ul>
+              </button>
+            </li>
+            <li>
+              <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                data-bs-target="#reStoreDB" aria-expanded="false">
+                <ul class="sub-menu">
+                  <i 
+                    class="bi bi-dot">
+                  </i>
+                  การ Restore Database และสร้างฐานข้อมูล
+                </ul>
+              </button>
+            </li>
+          <div
+            class="collapse" id="reStoreDB">
+            <ul
+              class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#ขั้นตอนRestore" aria-expanded="false">
+                  <ul class="sub-sub-sub-item">
+                    <i class="bi bi-dot">
+                      ขั้นตอนการ Restore Database
+                    </i>
+                  </ul>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="collapse" id="reStoreDB">
+            <ul
+              class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#dbUser" aria-expanded="false">
+                  <ul class="sub-menu">
+                    <i class="bi bi-dot">
+                      ขั้นตอนการสร้างฐานข้อมูล User
+                    </i>
+                  </ul>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+        <li>
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#deployApplication" aria-expanded="false">
+            <i 
+              class="dropdown-toggle">
+            </i>
+              Deploy Application
+          </button>
+        </li>
+          <div
+            class="collapse" id="deployApplication">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#ctdFront" aria-expanded="false">
+                  <ul class="sub-menu">
+                  <i 
+                    class="bi bi-dot">
+                  </i>
+                  Deploy CTD-Front
+                  </ul>
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#dePloyBoGate" aria-expanded="false">
+                  <ul class="sub-menu">
+                  <i 
+                    class="bi bi-dot">
+                  </i>
+                  Deploy Bonanza Gateway
+                  </ul>
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#dePloyBoAPI" aria-expanded="false">
+                  <ul class="sub-menu">
+                    <i 
+                      class="bi bi-dot">
+                    </i>
+                  Deploy Bonanza WebAPI
+                  </ul>
+                </button>
+              </li>
+            </ul>
+          </div>
+        <li>
+          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+            data-bs-target="#startServerตามเครื่องต่างๆ" aria-expanded="false">
+            <i 
+              class="dropdown-toggle">
+            </i>
+              Start Server ตามเครื่องต่าง ๆ
+          </button>
+        </li>
+        <div
+            class="collapse" id="startServerตามเครื่องต่างๆ">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#การStartServiceที่เครื่องApplicationServer" aria-expanded="false">
+                  <ul class="sub-menu">
+                    <i 
+                      class="bi bi-dot">
+                    </i>
+                    การ Start Service ที่เครื่อง Application Server
+                  </ul>
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#startServiceatProxy" aria-expanded="false">
+                  <ul class="sub-menu">
+                  <i 
+                    class="bi bi-dot">
+                  </i>
+                  การ Start Service ที่เครื่อง Proxy
+                  </ul>
+                </button>
+              </li>
+              <li>
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                  data-bs-target="#การStartServiceSQLServer" aria-expanded="false">
+                  <ul class="sub-menu">
+                    <i 
+                      class="bi bi-dot">
+                    </i>
+                  การ Start Service SQL Server
+                  </ul>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </ul>
+      </div>
+    </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
+          data-bs-target="#visualStudioCollapse" aria-expanded="false">
+          <span class="fw-bold">Visual Studio
+            </span>
+        </button>
+        <div class="collapse" id="visualStudioCollapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#overviewVS" class="link-dark rounded">Overview</a></li>
+            <li><a href="#setupVS" class="link-dark rounded">Setup</a></li>
+            <li><a href="#featuresVS" class="link-dark rounded">Features</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
+          data-bs-target="#microsoftDotNetCollapse" aria-expanded="false">
+          <span class="fw-bold">Microsoft .NET</span>
+        </button>
+        <div class="collapse" id="microsoftDotNetCollapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#overviewDotNet" class="link-dark rounded">Overview</a></li>
+            <li><a href="#setupDotNet" class="link-dark rounded">Setup</a></li>
+            <li><a href="#getStartedDotNet" class="link-dark rounded">Get Started</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="border-top my-3"></li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
+          data-bs-target="#accountCollapse" aria-expanded="false">
+          Account
+        </button>
+        <div class="collapse" id="accountCollapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="#profile" class="link-dark rounded">Profile</a></li>
+            <li><a href="#settings" class="link-dark rounded">Settings</a></li>
+            <li><a href="#signOut" class="link-dark rounded">Sign Out</a></li>
+          </ul>
+        </div>
+      </li>
+      </ul>
+    </div>
+
+    <!-- Content -->
+    <div class="col-md-9 p-4" id="content-tainer">
+      <!-- Proxy Server and Configuration -->
+      <div id="Introduction" class="mb-5">
+        <h2>ข้อมูลระบบเบื้องต้น</h2>
+        <p>
+          ระบบ Custodian เป็นระบบสำหรับรับฝากและเก็บรักษาหลักทรัพย์ รวมถึงบริการด้านหลักทรัพย์อื่นๆ เช่น ถอน โอน รับโอน
+          จำนำ อายัด เป็นต้น รวมถึง รองรับการเปิดบัญชีหลักทรัพย์ พิมพ์สมุดผู้ฝากพันธบัตรรัฐบาล(พันธบัตรออมทรัพย์)
+          เพื่อให้บริการผู้รับฝากหลักทรัพย์ โดยผู้ใช้งานในระบบ แบ่งเป็น 2 กลุ่มคือ
+        </p>
+        <ul>
+          • เข้าใช้งานระบบผ่าน Browser สำหรับพิมพ์สมุดผู้ฝากพันธบัตรรัฐบาลและ ธุรกรรมต่างๆ (สาขา และ
+          ฝ่ายธุรกิจการเงินส่วนบุคคล) <br>
+          • เข้าใช้งานผ่าน Windows Application เพื่อทำการปิดสิ้นวัน รวมถึงการรวบรวมข้อมูลส่งต่อไปยัง TSD
+          (ศูนย์รับฝากหลักทรัพย์) โดย ฝ่ายปฏิบัติการลงทุน และฝ่ายธุรกิจการลงทุน
+        </ul>
+      </div>
+
+      <div id="environmentVariable" class="mb-5">
+        <h2>Environment variable บนเครื่องกลุ่ม custodian service </h2>
+        <ul>
+          <li>
+            <strong>
+              Client
+            </strong>
+          </li>
+        <center><img src="IMG/01.png" alt="Installation Guide" class="mb-5" width="700"></center>
+        </ul>
+        <ul>
+          <li>
+            <strong>
+              Proxy Server
+            </strong>
+          </li>
+        <center><img src="IMG/proxy.png" alt="Installation Guide" class="mb-5" width="700"></center>
+        </ul>
+        <ul>
+          <li><strong>Application Server</strong></li>
+        <center><img src="IMG/app.png" alt="Installation Guide" class="mb-5" width="700"></center>
+        </ul>
+        <ul>
+          <li>
+            <strong>
+              Database Server
+            </strong>
+          </li>
+        <center><img src="IMG/data.png" alt="Installation Guide" class="mb-5" width="700"></center>
+        </ul>
+        <ul>
+          <li>
+            <strong>
+              Branch
+            </strong>
+          </li>
+        <center><img src="IMG/branch.png" alt="Installation Guide" class="mb-5" width="700"></center>
+        </ul>
+      </div>
+
+      <div id="fireWallPort" class="mb-5">
+        <h2>Firewall Port ส่วนที่เกี่ยวกับ Application</h2>
+        <ul>
+          <center><img src="IMG/firewall.png" alt="Installation Guide" class="mb-5" width="700"></center>
+        </ul>
+      </div>
+
+      <div id="directoryStructure" class="mb-5">
+        <h2>Directory structure และ Permission</h2>
+        <ul>
+        <center><img src="IMG/direc.png" alt="Installation Guide" class="mb-5" width="700"></center>
+         </ul>
+        <ul>
+        <center><img src="IMG/direc2.png" alt="Installation Guide" class="mb-5" width="700"></center>
+        </ul>
+      </div>
+
+      <div id="userAndGroup" class="mb-5">
+        <h2>User และ Group สำหรับ SIT Environment</h2>
+        <p>
+          SIT Environment
+        </p>
+        <ul>
+          <center><img src="IMG/sit.png" alt="Installation Guide" class="mb-5" width="650"></center>
+        </ul>
+      </div>
+
+      <div id="uatEnviron" class="mb-5">
+        <h2>User และ Group สำหรับ UAT Environment</h2>
+        <p>
+          UAT Environment
+        </p>
+        <ul>
+          <center><img src="IMG/uat.png" alt="Installation Guide" class="mb-5" width="700"></center>
+        </ul>
+        <ul>
+          <center><img src="IMG/uat2.png" alt="Installation Guide" class="mb-5" width="700"></center>
+        </ul>
+      </div>
+
+      <!-- Visual Studio Content -->
+      <div id="productionEn" class="mb-5">
+        <h2>User และ Group สำหรับ Production Environment</h2>
+        <p>
+          Production Environment
+        </p>
+        <ul>
+        <center><img src="IMG/produc.png" alt="Installation Guide" class="mb-5" width="700"></center>
+        </ul>
+        <ul>
+        <center><img src="IMG/produc2.png" alt="Installation Guide" class="mb-5" width="700"></center>
+        </ul>
+      </div>
+      <div id="configFire" class="mb-5">
+        <h2>ขั้นตอนการสร้างกฎ Inbound Rule บนพอร์ต 8443 Proxy Server</h2>
+        <h6> 1. เปิด Windows Defender Firewall with Advanced Security :</h6> 
+          <ul>  a. กด Win + R เพื่อเปิดหน้าต่าง Run <br>
+                b. พิมพ์คำสั่ง wf.msc แล้วกด Enter
+          </ul>
+          <center>
+          <img src="IMG/config.png" alt="Installation Guide" class="mb-5" width="500">
+          </center>
+          <ul>
+                c. หน้าต่าง Windows Defender Firewall with Advanced Security จะเปิดขึ้น
+          </ul>
+            <h6>2. เลือก Inbound Rules :</h6>
+              <ul>a. ในแถบเมนูทางด้านซ้าย ให้เลือก Inbound Rules (กฎสำหรับการรับข้อมูลขาเข้า)</ul>
+            <h6>3. สร้างกฎใหม่ :</h6>
+              <ul>a. ในเมนูทางขวามือ ให้คลิกที่ New Rule... เพื่อเริ่มสร้างกฎใหม</ul>
+            <h6>4. เลือกประเภทของกฎเป็น Port :</h6>
+              <ul>a. ในหน้าต่าง New Inbound Rule Wizard ให้เลือกประเภทของกฎเป็น Port จากนั้นคลิก Next</ul>
+              <center>
+              <img src="IMG/c1.png" alt="Installation Guide" class="mb-5" width="500">
+              </center>
+            <h6>5. เลือกโปรโตคอลและกำหนดพอร์ต :</h6>
+              <ul>a. เลือก TCP (โปรโตคอลที่ Traefik ใช้)<br>
+                  b. ในช่อง Specific local ports ให้พิมพ์หมายเลขพอร์ต 8443 จากนั้นคลิก Next</ul>
+                  <center>
+                    <img src="IMG/c2.png" alt="Installation Guide" class="mb-5" width="500">
+                  </center>
+            <h6>6. เลือก Allow the connection :</h6>
+              <ul>a. เลือก Allow the connection เพื่ออนุญาตการรับข้อมูลบนพอร์ตนี้ จากนั้นคลิก Next</ul>
+            <h6>7. เลือก Profile :</h6>
+            <ul>a. เลือก Profile ที่คุณต้องการให้กฎนี้มีผล เช่น :<br>
+              b. Domain: สำหรับเครือข่ายโดเมน<br>
+              c. Private: สำหรับเครือข่ายส่วนตัว<br>
+              d. Public: สำหรับเครือข่ายสาธารณะ<br>
+              e. เลือกโปรไฟล์ที่ต้องการแล้วคลิก Next</ul>
+              <center>
+                <img src="IMG/c3.png" alt="Installation Guide" class="mb-5" width="500">
+              </center>
+            <h6>8. ตั้งชื่อกฎเป็น "Traefik" :</h6>
+              <ul>a. ในช่อง Name ให้ตั้งชื่อกฎเป็น Traefik <br>
+                  b. ในช่อง Description คุณสามารถระบุคำอธิบายเพิ่มเติมได้ (ไม่จำเป็นต้องกรอกก็ได้) <br>
+                  c. คลิก Finish เพื่อบันทึกกฎ</ul>
+
+      </div>
+      <div id="preConfig" class="mb-5">
+        <h2>ติดตั้ง Pre-config สำหรับ traefik</h2>
+        <p>
+          copy folder conf จาก package supporting_software\deploy\proxy\traefik วางที่ $TRAEFIK_HOME ซึ่ง
+          มี config ที่สำคัญดังนี้
+        </p>
+        <p>$TRAEFIK_HOME\service\WinSW-X64.xml</p>
+      <center><img src="IMG/per1.png" alt="Installation Guide" class="mb-5" width="500"></center>
+        <p>$TRAEFIK_HOME\conf\mssql.toml</p>
+      <center><img src="IMG/per2.png" alt="Installation Guide" class="mb-5" width="500"></center>
+        <p>$TRAEFIK_HOME\conf\web.toml</p>
+      <center><img src="IMG/per3.png" alt="Installation Guide" class="mb-5" width="500"></center>
+      <center><img src="IMG/per4.png" alt="Installation Guide" class="mb-5" width="500"></center>
+      </div>
+
+      <!-- การใช้ config certificate -->
+      <div id="cerTi" class="mb-5">
+        <h2>การ config certificate</h2>
+          <p>ใช้ cert ที่มีการขอ register name ที่ DNS เป็น intraWebCustodianSIT.gsb และ
+            intraWebCustodianUAT.gsb ที่ธนาคาร generate ให้ supporting_software\cert</p>
+            <ul>- intraWebCustodianSIT.gsb.cer <br>
+                - intraWebCustodianSIT.gsb.p12 <br>
+                - intraWebCustodianUAT.gsb.cer <br>
+                - intraWebCustodianUAT.gsb.p12
+            </ul>
+          <p>จะต้องมีการแปลง .p12 เป็น .key (เนื่องจาก traefik ต้องการ key ที่ไม่มีการระบุ passphrase จึงต้อง
+              export ออกมาใหม่ด้วยคำสั่ง</p>
+            <code>## Generate server private key file server.key <br>
+              openssl pkcs12 -in <<.p12 file name>> -nocerts -nodes -out <<.key file>> 
+            </code>
+          <p>โดยใช้ program openssl ใน supporting_software\util\OpenSSL-1.1.1h_win32
+              เช่น</p>
+            <code>openssl pkcs12 -in intraWebCustodianSIT.gsb.p12 -nocerts -nodes -out intraWebCustodianSIT.gsb.key
+            </code>
+          <p>copy file .cer และ .key วางที่ $TRAEFIK_HOME/cert ตรวจสอบ file web.toml ส่วน ระบุ path ของ
+              certificate แบบ full path 
+          </p>
+      </div>
+      <div id="configFi" class="mb-5">
+        <h2>config firewall ของเครื่อง Application Server</h2>
+          <p>การสร้าง Inbound Rule บนพอร์ต 8443 Application Server</p>
+          <ol>
+            <li>
+              เปิด Windows Defender Firewall with Advanced Security :
+              <ul>a. กด Win + R เพื่อเปิดหน้าต่าง Run <br>
+                  b. พิมพ์คำสั่ง wf.msc แล้วกด Enter <br>
+                <center><img src="IMG/5.1.png" alt="Installation Guide" class="mb-5" width="500"><br></center>
+                  c. หน้าต่าง Windows Defender Firewall with Advanced Security จะเปิดขึ้น
+              </ul>
+            <li>
+              เลือก Inbound Rules :
+              <ul>a. ในแถบเมนูทางด้านซ้าย ให้เลือก Inbound Rules (กฎสำหรับการรับข้อมูลขาเข้า)</ul>
+              <li>
+                สร้างกฎใหม่ :
+              </li>
+              <ul>a. ในเมนูทางขวามือ ให้คลิกที่ New Rule... เพื่อเริ่มสร้างกฎใหม่</ul>
+              <li>
+                เลือกประเภทของกฎเป็น Port :
+                <ul>
+                  a. ในหน้าต่าง New Inbound Rule Wizard ให้เลือกประเภทของกฎเป็น Port จากนั้นคลิก Next
+                </ul>
+                <center><img src="IMG/5.2.png" alt="Installation Guide" class="mb-5" width="500"></center>
+              </li>
+              <li>เลือกโปรโตคอลและกำหนดพอร์ต :
+                <ul>
+                  a. เลือก TCP (โปรโตคอลที่ Tomcat ใช้) <br>
+                  b. ในช่อง Specific local ports ให้พิมพ์หมายเลขพอร์ต 8443 จากนั้นคลิก Next
+                </ul>
+                <center><img src="IMG/5.3.png" alt="Installation Guide" class="mb-5" width="500"></center>
+              </li>
+              <li>เลือก Allow the connection :
+                <ul>a. เลือก Allow the connection เพื่ออนุญาตการรับข้อมูลบนพอร์ตนี้ จากนั้นคลิก Next
+                </ul>
+              </li>
+              <li>เลือก Profile :
+                <ul>
+                a. เลือก Profile ที่คุณต้องการให้กฎนี้มีผล เช่น : <br>
+                b. Domain: สำหรับเครือข่ายโดเมน <br>
+                c. Private: สำหรับเครือข่ายส่วนตัว <br>
+                d. Public: สำหรับเครือข่ายสาธารณะ <br>
+                e. เลือกโปรไฟล์ที่ต้องการแล้วคลิก Next
+                </ul>
+              <center><img src="IMG/5.4.png" alt="Installation Guide" class="mb-5" width="500"></center>
+              </li>
+              <li>ตั้งชื่อกฎเป็น "Tomcat" :
+                <ul>a. ในช่อง Name ให้ตั้งชื่อกฎเป็น Tomcat <br>
+                    b. ในช่อง Description คุณสามารถระบุคำอธิบายเพิ่มเติมได้ (ไม่จำเป็นต้องกรอกก็ได้) <br>
+                    c. คลิก Finish เพื่อบันทึกกฎ
+                </ul>
+              </li>
+            <p>การสร้าง Inbound Rule บนพอร์ต 10456 Application Server</p>
+            <ol>
+              <li>
+                เปิด Windows Defender Firewall with Advanced Security :
+                <ul>
+                  a. กด Win + R เพื่อเปิดหน้าต่าง Run <br>
+                  b. พิมพ์คำสั่ง wf.msc แล้วกด Enter
+                  <center><img src="IMG/5.5.png" alt="Installation Guide" class="mb-5" width="500"></center><br>
+                  c. หน้าต่าง Windows Defender Firewall with Advanced Security จะเปิดขึ้น
+                </ul>
+              </li>
+              <li>เลือก Inbound Rules :
+                <ul>
+                  a. ในแถบเมนูทางด้านซ้าย ให้เลือก Inbound Rules (กฎสำหรับการรับข้อมูลขาเข้า)
+                </ul>
+              </li>
+              <li>สร้างกฎใหม่ :
+                <ul>
+                  a. ในเมนูทางขวามือ ให้คลิกที่ New Rule... เพื่อเริ่มสร้างกฎใหม่
+                </ul>
+              </li>
+              <li>เลือกประเภทของกฎเป็น Port :
+                <ul>
+                  a. ในหน้าต่าง New Inbound Rule Wizard ให้เลือกประเภทของกฎเป็น Port จากนั้นคลิก Next
+                </ul>
+                <center><img src="IMG/5.6.png" alt="Installation Guide" class="mb-5" width="500"></center>
+              </li>
+              <li>เลือกโปรโตคอลและกำหนดพอร์ต :
+                <ul>
+                  a. เลือก TCP (โปรโตคอลที่ webapi ใช้) <br>
+                  b. ในช่อง Specific local ports ให้พิมพ์หมายเลขพอร์ต 10456 จากนั้นคลิก Next <br>
+                  <center><img src="IMG/5.7.png" alt="Installation Guide" class="mb-5" width="500"></center>
+                </ul>
+              </li>
+              <li>เลือก Allow the connection :
+                <ul>
+                  a. เลือก Allow the connection เพื่ออนุญาตการรับข้อมูลบนพอร์ตนี้ จากนั้นคลิก Next
+                </ul>
+              </li>
+              <li>เลือก Profile :
+                <ul>
+                  a. เลือก Profile ที่คุณต้องการให้กฎนี้มีผล เช่น : <br>
+                  b. Domain: สำหรับเครือข่ายโดเมน <br>
+                  c. Private: สำหรับเครือข่ายส่วนตัว <br>
+                  d. Public: สำหรับเครือข่ายสาธารณะ <br>
+                  e. เลือกโปรไฟล์ที่ต้องการแล้วคลิก Next
+                  <center><img src="IMG/5.8.png" alt="Installation Guide" class="mb-5" width="500"></center>
+                </ul>
+              </li>
+              <li>
+                ตั้งชื่อกฎเป็น "Bonanza webapi" :
+                <ul>
+                  a. ในช่อง Name ให้ตั้งชื่อกฎเป็น Bonanza webapi <br>
+                  b. ในช่อง Description คุณสามารถระบุคำอธิบายเพิ่มเติมได้ (ไม่จำเป็นต้องกรอกก็ได้) <br>
+                  c. คลิก Finish เพื่อบันทึกกฎ
+                </ul>
+              </li>
+            </ol>
+            </li>
+            </li>
+          </ol>
+          <h3>1. Setting Up .NET 7 (Latest Version)</h3>
+          <p>To set up .NET 7, follow these steps:</p>
+          <ol>
+            <li>Visit the <a href="https://dotnet.microsoft.com/download/dotnet/7.0" target="_blank">official .NET 7 download page</a>.</li>
+            <li>Select the version that matches your operating system (Windows, macOS, or Linux).</li>
+            <li>Download the installer for your OS and run it.The installer will automatically install the .NET SDK
+              and runtime.</li>
+            <li>Verify the installation by opening a terminal/command prompt and typing <code>dotnet --version</code>.
+              You should see the .NET 7 version number.</li>
+          </ol>
+
+          <h3>2. Setting Up .NET 6 (LTS Version)</h3>
+          <p>For long-term support (LTS), .NET 6 is a stable choice. Follow these steps to set it up:</p>
+          <ol>
+            <li>Go to the <a href="https://dotnet.microsoft.com/download/dotnet/6.0" target="_blank">official .NET 6
+                download page</a>.</li>
+            <li>Select the appropriate version for your operating system and download the installer.</li>
+            <li>Run the installer and follow the instructions. .NET 6 will be installed, including the .NET SDK and
+              runtime.</li>
+            <li>Once the installation is complete, open a terminal or command prompt and type
+              <code>dotnet --version</code> to confirm the installation of .NET 6.
+            </li>
+          </ol>
+
+          <h3>3. Setting Up .NET 5</h3>
+          <p>If you are working with legacy projects or require .NET 5, follow these steps:</p>
+          <ol>
+            <li>Visit the <a href="https://dotnet.microsoft.com/download/dotnet/5.0" target="_blank">official .NET 5
+                download page</a>.</li>
+            <li>Choose the version corresponding to your OS (Windows, macOS, Linux) and download it.</li>
+            <li>Run the installer and follow the prompts to install .NET 5 on your system.</li>
+            <li>Once installation is complete, verify it by typing <code>dotnet --version</code> in your terminal or
+              command prompt.</li>
+          </ol>
+
+          <h3>4. Setting Up .NET Core 3.1</h3>
+          <p>For applications targeting .NET Core 3.1, which is still widely used in production, you can follow these
+            steps:</p>
+          <ol>
+            <li>Go to the <a href="https://dotnet.microsoft.com/download/dotnet/3.1" target="_blank">official .NET
+                Core 3.1 download page</a>.</li>
+            <li>Select the version that corresponds to your OS and download the installer.</li>
+            <li>Run the downloaded installer to install .NET Core 3.1, including the SDK and runtime.</li>
+            <li>Confirm the installation by typing <code>dotnet --version</code> in your terminal or command prompt.
+              You should see the .NET Core version number.</li>
+          </ol>
+
+          <h3>5. Setting Up .NET Framework</h3>
+          <p>If you are working on a project that uses the .NET Framework (primarily for Windows applications), you
+            need to install it separately from the .NET SDK:</p>
+          <ol>
+            <li>Visit the <a href="https://dotnet.microsoft.com/download/dotnet-framework" target="_blank">official
+                .NET Framework download page</a>.</li>
+            <li>Select the version of .NET Framework required for your project.</li>
+            <li>Download the installer and follow the instructions to install the framework on your machine.</li>
+            <li>Note that .NET Framework is only supported on Windows, and you may need to install specific versions
+              based on your application’s requirements.</li>
+          </ol>
+
+          <h3>6. Verify Your Installation</h3>
+          <p></p>
+          <code>dotnet --version</code>
+          <p></p>
+
+          <p></p>
+      </div>
+      <div id="getStartedDotNet" class="mb-5">
+        <h2>Getting Started with .NET</h2>
+        <p>Once you’ve installed .NET, create a new project using the <code>dotnet new</code> command, and start
+          building your application right away.</p>
+      </div>
+
+      <!-- Account Content -->
+      <div id="profile" class="mb-5">
+        <h2>Profile</h2>
+        <p>Your profile contains personal information such as your name, email, and preferences. You can update your
+          details at any time.</p>
+      </div>
+      <div id="settings" class="mb-5">
+        <h2>Settings</h2>
+        <p>Manage your account settings such as notification preferences, privacy settings, and security options like
+          two-factor authentication (2FA).</p>
+      </div>
+      <div id="signOut" class="mb-5">
+        <h2>Sign Out</h2>
+        <p>To sign out of your account, click the "Sign Out" option in the account menu. This will log you out
+          securely.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js">
+  </script>
+</body>
+
+</html>

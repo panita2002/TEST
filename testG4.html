@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Sidebar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 bg-white p-3" style="height: 100vh; overflow-y: auto;">
+                <a href="/" class="d-flex flex-column align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                    <img src="IMG/img1.png" alt="Installation Guide" class="mb-2" width="150">
+                    <span class="fs-5 fw-semibold">คู่มือการติดตั้งโปรแกรม</span>
+                </a>
+                <ul class="list-unstyled ps-0">
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
+                            data-bs-target="#visualStudioCodeCollapse" aria-expanded="false">
+                            <span class="fw-bold">Visual Studio Code</span>
+                        </button>
+                        <div class="collapse" id="visualStudioCodeCollapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#overviewVSCode" class="link-dark rounded">Overview</a></li>
+                                <li><a href="#setupVSCode" class="link-dark rounded">Setup</a></li>
+                                <li><a href="#getStartedVSCode" class="link-dark rounded">Get Started</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
+                            data-bs-target="#visualStudioCollapse" aria-expanded="false">
+                            <span class="fw-bold">Visual Studio</span>
+                        </button>
+                        <div class="collapse" id="visualStudioCollapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#overviewVS" class="link-dark rounded">Overview</a></li>
+                                <li><a href="#setupVS" class="link-dark rounded">Setup</a></li>
+                                <li><a href="#featuresVS" class="link-dark rounded">Features</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
+                            data-bs-target="#microsoftDotNetCollapse" aria-expanded="false">
+                            <span class="fw-bold">Microsoft .NET</span>
+                        </button>
+                        <div class="collapse" id="microsoftDotNetCollapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#overviewDotNet" class="link-dark rounded">Overview</a></li>
+                                <li><a href="#setupDotNet" class="link-dark rounded">Setup</a></li>
+                                <li><a href="#getStartedDotNet" class="link-dark rounded">Get Started</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="border-top my-3"></li>
+                    <li class="mb-1">
+                        <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
+                            data-bs-target="#accountCollapse" aria-expanded="false">
+                            Account
+                        </button>
+                        <div class="collapse" id="accountCollapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#profile" class="link-dark rounded">Profile</a></li>
+                                <li><a href="#settings" class="link-dark rounded">Settings</a></li>
+                                <li><a href="#signOut" class="link-dark rounded">Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Content -->
+            <div class="col-md-9 p-4">
+                <!-- Visual Studio Code Content -->
+                <div id="overviewVSCode" class="mb-5">
+                    <h2>Overview of Visual Studio Code</h2>
+                    <p>Visual Studio Code (VS Code) is a free, open-source, lightweight code editor developed by Microsoft. It is designed for developers who need a versatile and efficient tool to write, debug, and deploy code.</p>
+                    <p>VS Code supports a wide range of programming languages such as JavaScript, Python, Java, C++, and many more. One of the standout features of VS Code is its extensibility — you can install extensions to add language support, debuggers, linters, and themes, among others.</p>
+                    <p>Some of the key features of Visual Studio Code include:</p>
+                    <ul>
+                        <li><strong>Cross-Platform</strong>: VS Code runs on Windows, macOS, and Linux, providing a consistent experience across all platforms.</li>
+                        <li><strong>Intelligent Code Editing</strong>: With features like IntelliSense, VS Code provides auto-completion, method suggestions, and documentation for functions and variables, helping developers write code faster and with fewer errors.</li>
+                        <li><strong>Integrated Git Support</strong>: VS Code comes with built-in Git support, allowing you to commit, push, and pull directly from the editor. You can also view diffs, resolve merge conflicts, and manage branches all within the editor.</li>
+                        <li><strong>Debugging</strong>: VS Code includes powerful debugging tools that allow you to set breakpoints, inspect variables, and step through code right from the editor.</li>
+                        <li><strong>Extensibility</strong>: VS Code has a rich marketplace of extensions for adding functionality like code formatting, linters, live previews, and much more. You can personalize your coding environment to suit your workflow.</li>
+                        <li><strong>Lightweight and Fast</strong>: Despite its many features, VS Code is a lightweight editor that starts quickly and is optimized for performance, making it an excellent choice for developers working on large projects.</li>
+                    </ul>
+                    <p>Overall, Visual Studio Code is a highly versatile, user-friendly editor that can significantly improve the development process. Whether you’re writing simple scripts or complex applications, VS Code offers the tools and flexibility needed to enhance your coding experience.</p>
+                </div>
+                
+                <div id="setupVSCode" class="mb-5">
+                    <h2>Setup for Visual Studio Code</h2>
+                    <p>To get started with Visual Studio Code, you need to download and install the editor on your machine. Below are the steps to set up VS Code on different operating systems:</p>
+                    
+                    <h3>1. Download and Install Visual Studio Code</h3>
+                    <p>Follow these steps to download and install Visual Studio Code:</p>
+                    <ol>
+                        <li>Go to the official <a href="https://code.visualstudio.com" target="_blank">Visual Studio Code website</a>.</li>
+                        <li>Click on the "Download for Windows" (or macOS/Linux) button, depending on your operating system.</li>
+                        <li>Once the installer file is downloaded, open it and follow the installation instructions.</li>
+                        <li>After installation, open Visual Studio Code to complete the setup.</li>
+                    </ol>
+                
+                    <h3>2. Install Extensions for Programming Languages</h3>
+                    <p>VS Code supports a wide range of programming languages. To start coding in your preferred language, you can install relevant extensions. Here’s how:</p>
+                    <ol>
+                        <li>Click on the Extensions icon on the left sidebar (or press <strong>Ctrl+Shift+X</strong>).</li>
+                        <li>Search for the language or framework you want to use (e.g., Python, JavaScript, Java, etc.).</li>
+                        <li>Click "Install" to add the extension to your VS Code setup.</li>
+                    </ol>
+                
+                    <h3>3. Configure Settings</h3>
+                    <p>VS Code offers many customization options through settings. You can adjust editor behavior, theme, font size, and more:</p>
+                    <ul>
+                        <li><strong>Change the Theme:</strong> Open the command palette (press <strong>Ctrl+Shift+P</strong>) and search for "Color Theme". Select a theme from the list.</li>
+                        <li><strong>Set Font Size:</strong> In the settings (File > Preferences > Settings), search for "font size" and adjust the size as needed.</li>
+                        <li><strong>Enable Auto Save:</strong> To enable auto-saving of your files, go to Settings and search for "Auto Save". Choose your preferred auto-save option.</li>
+                    </ul>
+                
+                    <h3>4. Setting Up Integrated Terminal</h3>
+                    <p>VS Code has an integrated terminal that allows you to run commands without leaving the editor. Here’s how to set it up:</p>
+                    <ol>
+                        <li>Open the terminal by selecting "Terminal" from the top menu and then "New Terminal".</li>
+                        <li>By default, the terminal will use your system’s default shell (e.g., Command Prompt on Windows, Terminal on macOS/Linux). You can change the shell from the terminal settings if needed.</li>
+                    </ol>
+                
+                    <h3>5. Install Git (Optional)</h3>
+                    <p>If you plan to use Git for version control, you need to install Git on your machine:</p>
+                    <ol>
+                        <li>Go to the <a href="https://git-scm.com/downloads" target="_blank">official Git website</a> to download Git.</li>
+                        <li>Follow the installation instructions based on your operating system.</li>
+                        <li>Once installed, you can access Git features directly within Visual Studio Code, such as committing changes, pushing, and pulling from repositories.</li>
+                    </ol>
+                
+                    <p>After completing the setup, you're ready to start coding with Visual Studio Code!</p>
+                </div>
+                
+                <div id="getStartedVSCode" class="mb-5">
+                    <h2>Getting Started with Visual Studio Code</h2>
+                    <p>After installation, open Visual Studio Code and create a new project. You can install extensions to enhance functionality based on your programming language.</p>
+                </div>
+
+                <!-- Visual Studio Content -->
+                <div id="overviewVS" class="mb-5">
+                    <h2>Overview of Visual Studio</h2>
+                    <p>Visual Studio is a full-featured IDE for building Windows applications, websites, and services. It provides a rich development environment with debugging, testing, and version control integration.</p>
+                </div>
+                <div id="setupVS" class="mb-5">
+                    <h2>Setting up Visual Studio</h2>
+                    <p>Install Visual Studio by downloading it from the official website. Choose the required workloads for your project, such as .NET development or Python development.</p>
+                </div>
+                <div id="featuresVS" class="mb-5">
+                    <h2>Features of Visual Studio</h2>
+                    <p>Visual Studio offers several key features such as code completion, version control integration, built-in debugging tools, and support for cloud applications.</p>
+                </div>
+
+                <!-- Microsoft .NET Content -->
+                <div id="overviewDotNet" class="mb-5">
+                    <h2>Overview of Microsoft .NET</h2>
+                    <p>.NET is an open-source framework developed by Microsoft for building cross-platform applications. It supports various programming languages like C#, F#, and VB.NET.</p>
+                </div>
+                <div id="setupDotNet" class="mb-5">
+                    <h2>Setting up Microsoft .NET</h2>
+                    <p>To start using .NET, download and install the .NET SDK from the official website. You can then create console applications, web apps, and more.</p>
+                </div>
+                <div id="getStartedDotNet" class="mb-5">
+                    <h2>Getting Started with .NET</h2>
+                    <p>Once you’ve installed .NET, create a new project using the <code>dotnet new</code> command, and start building your application right away.</p>
+                </div>
+
+                <!-- Account Content -->
+                <div id="profile" class="mb-5">
+                    <h2>Profile</h2>
+                    <p>Your profile contains personal information such as your name, email, and preferences. You can update your details at any time.</p>
+                </div>
+                <div id="settings" class="mb-5">
+                    <h2>Settings</h2>
+                    <p>Manage your account settings such as notification preferences, privacy settings, and security options like two-factor authentication (2FA).</p>
+                </div>
+                <div id="signOut" class="mb-5">
+                    <h2>Sign Out</h2>
+                    <p>To sign out of your account, click the "Sign Out" option in the account menu. This will log you out securely.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

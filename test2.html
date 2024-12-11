@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Test</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 bg-white p-3" style="height: 200vh; overflow-y: auto;">
+        <a href="/"
+          class="d-flex flex-column align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+          <img src="IMG/img1.png" alt="Installation Guide" class="mb-2" width="150">
+          <span class="fs-5 fw-semibold">เอกสารคู่มือการติดตั้งระบบงาน Custodian และการกำหนดค่าพารามิเตอร์ต่าง ๆ</span>
+        </a>
+        <ul class="list-unstyled ps-0">
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
+              data-bs-target="#configAndParameterCollapse" aria-expanded="false">
+              <span class="fw-bold">Configuration and Parameter Setting</span>
+            </button>
+            <div class="collapse" id="configAndParameterCollapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#Introduction" aria-expanded="false">Introduction</button></li>
+                <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#setupEnvironmentVariable" aria-expanded="false">
+                    <i class="dropdown-toggle"></i>
+                    Setup Environment Variable
+                </button>
+                    <div class="collapse" id="setupEnvironmentVariable">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                          <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#environmentVariable" aria-expanded="false">
+                            <i class="bi bi-dot"></i>
+                            Environment variable บนเครื่องกลุ่ม custodian service</button></li>
+                          <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#fireWallPort" aria-expanded="false">
+                            <i class="bi bi-dot"></i>
+                            Firewall Port ส่วนที่เกี่ยวกับ Application</button></li>
+                          <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                            data-bs-target="#directoryStructure" aria-expanded="false">
+                            <i class="bi bi-dot"></i>
+                            Directory structure และ Permission</button></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#setupUserandGroup" aria-expanded="false">Setup User and Group</button></li>
+                <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#setupProxyServerandConfiguration" aria-expanded="false">Setup Proxy Server and Configuration</button></li>
+                <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#setupApplicationServerServiceandConfiguration" aria-expanded="false"class="link-dark rounded">Setup Application Server Service and Configuration</button></li>
+                <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#setupClient" aria-expanded="false">Setup Client</button></li>
+                <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#setupPrinterAgent" aria-expanded="false">Setup Printer Agent</button></li>
+                <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#createDatabaseandSetupUserDatabase" aria-expanded="false">Create Database and Setup User Databese
+                </button></li>
+                <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#deployApplication" aria-expanded="false">Deploy Application</button></li>
+                <li><button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
+                    data-bs-target="#startServerตามเครื่องต่างๆ" aria-expanded="false">Start Server ตามเครื่องต่าง ๆ</button></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
+              data-bs-target="#visualStudioCollapse" aria-expanded="false">
+              <span class="fw-bold">Visual Studio</span>
+            </button>
+            <div class="collapse" id="visualStudioCollapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#overviewVS" class="link-dark rounded">Overview</a></li>
+                <li><a href="#setupVS" class="link-dark rounded">Setup</a></li>
+                <li><a href="#featuresVS" class="link-dark rounded">Features</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
+              data-bs-target="#microsoftDotNetCollapse" aria-expanded="false">
+              <span class="fw-bold">Microsoft .NET</span>
+            </button>
+            <div class="collapse" id="microsoftDotNetCollapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#overviewDotNet" class="link-dark rounded">Overview</a></li>
+                <li><a href="#setupDotNet" class="link-dark rounded">Setup</a></li>
+                <li><a href="#getStartedDotNet" class="link-dark rounded">Get Started</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="border-top my-3"></li>
+          <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
+              data-bs-target="#accountCollapse" aria-expanded="false">
+              Account
+            </button>
+            <div class="collapse" id="accountCollapse">
+              <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                <li><a href="#profile" class="link-dark rounded">Profile</a></li>
+                <li><a href="#settings" class="link-dark rounded">Settings</a></li>
+                <li><a href="#signOut" class="link-dark rounded">Sign Out</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+      <div class="col-md-9 p-4">
+        <div id="Introduction" class="mb-5">
+          <h2>ข้อมูลระบบเบื้องต้น</h2>
+          <p>รายละเอียดเกี่ยวกับระบบ...</p>
+        </div>
+        <div id="environmentVariable" class="mb-5">
+          <h2>Environment variable บนเครื่องกลุ่ม custodian service</h2>
+          <p>ข้อมูลเกี่ยวกับการตั้งค่าต่างๆ...</p>
+        </div>
+        <!-- เพิ่มเนื้อหาอื่นๆ -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
