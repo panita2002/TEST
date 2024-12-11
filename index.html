@@ -29,7 +29,7 @@
           <li class="mb-1">
             <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse"
               data-bs-target="#configAndParameterCollapse" aria-expanded="false">
-              <span class="fw-bold">Configuration and Parameter Setting
+              <span class="fw-bold">CTD-GSB
               </span>
             </button>
             <div class="collapse" id="configAndParameterCollapse">
@@ -107,14 +107,13 @@
                 </a>
               </li>
               <li>
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                  data-bs-target="#productionEn" aria-expanded="false">
+                <a href="DTC-GSB/Production_En.html"class="btn-link">
                   <ul class="sub-menu">
-                  <i class="bi bi-dot">
-                  </i>
-                  User และ Group สำหรับ Production Environment
+                    <i class="bi bi-dot">
+                      User และ Group สำหรับ Production Environment
+                    </i>
                   </ul>
-                </button>
+                </a>
               </li>
             </ul>
           </div>
@@ -131,15 +130,13 @@
             class="collapse" id="setupProxyServerandConfiguration">
             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
               <li>
-                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
-                  data-bs-target="#configFire" aria-expanded="false">
+                <a href="DTC-GSB/Proxy.html"class="btn-link">
                   <ul class="sub-menu">
-                  <i 
-                    class="bi bi-dot">
-                  </i>
-                  config firewall ของเครื่อง proxy
+                    <i class="bi bi-dot">
+                      config firewall ของเครื่อง proxy
+                    </i>
                   </ul>
-                </button>
+                </a>
               </li>
               <li>
                 <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
@@ -680,33 +677,6 @@
     <div class="col-md-9 p-4" id="content-tainer">
       <!-- Proxy Server and Configuration -->
 
-
-      <div id="uatEnviron" class="mb-5">
-        <h2>User และ Group สำหรับ UAT Environment</h2>
-        <p>
-          UAT Environment
-        </p>
-        <ul>
-          <center><img src="IMG/uat.png" alt="Installation Guide" class="mb-5" width="700"></center>
-        </ul>
-        <ul>
-          <center><img src="IMG/uat2.png" alt="Installation Guide" class="mb-5" width="700"></center>
-        </ul>
-      </div>
-
-      <!-- Visual Studio Content -->
-      <div id="productionEn" class="mb-5">
-        <h2>User และ Group สำหรับ Production Environment</h2>
-        <p>
-          Production Environment
-        </p>
-        <ul>
-        <center><img src="IMG/produc.png" alt="Installation Guide" class="mb-5" width="700"></center>
-        </ul>
-        <ul>
-        <center><img src="IMG/produc2.png" alt="Installation Guide" class="mb-5" width="700"></center>
-        </ul>
-      </div>
       <div id="configFire" class="mb-5">
         <h2>ขั้นตอนการสร้างกฎ Inbound Rule บนพอร์ต 8443 Proxy Server</h2>
         <h6> 1. เปิด Windows Defender Firewall with Advanced Security :</h6> 
@@ -749,8 +719,9 @@
               <ul>a. ในช่อง Name ให้ตั้งชื่อกฎเป็น Traefik <br>
                   b. ในช่อง Description คุณสามารถระบุคำอธิบายเพิ่มเติมได้ (ไม่จำเป็นต้องกรอกก็ได้) <br>
                   c. คลิก Finish เพื่อบันทึกกฎ</ul>
-
       </div>
+      <!-- end configfire -->
+
       <div id="preConfig" class="mb-5">
         <h2>ติดตั้ง Pre-config สำหรับ traefik</h2>
         <p>

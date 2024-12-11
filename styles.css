@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap");
+
 /* Sidebar styles */
 .sidebar {
   text-align: left;
@@ -8,14 +10,6 @@
 .btn-toggle {
   text-align: left;
   /* จัดข้อความในปุ่มชิดซ้าย */
-  display: inline-block;
-  padding: fixed;
-  background-color: #fff; /* สีพื้นหลัง */
-  color: #000000; /* สีตัวอักษร */
-  text-decoration: none; /* ลบเส้นใต้ */
-  border-radius: 5px; /* มุมโค้ง */
-  text-align: left;
-  transition: background-color 0.3s;
 }
 .btn-toggle :hover {
   background-color: #fff; /* สีเมื่อ hover */
@@ -55,4 +49,9 @@
 
 .btn-link:hover {
   background-color: #fff; /* สีเมื่อ hover */
+}
+
+.mb-5 {
+  display: inline-block;
+  
 }
