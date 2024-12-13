@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การตั้งค่า ODBC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div>
+        <a 
+            href="/index.html">ย้อนกลับ
+        </a>
+        <ul>
+            <h3>
+                การตั้งค่า ODBC
+            </h3>
+            <ol>
+                <li>
+                   ติดตั้ง SQL Server Native Client Driver <br><br>
+                   <center>
+                        <img src="/IMG/odb1.png" alt="Centered Image" class="mb-5" width="750">
+                   </center><br>
+                   <li>
+                        ตรวจสอบ enable protocol TLS 1.2 โดยไปที่Registry Editor <br><br>
+                        <strong>
+                            Path : 
+                        </strong>
+                        \HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols <br><br>
+                        <center>
+                            <img src="/IMG/odb_cli.png" alt="Centered Image" class="mb-5" width="750">
+                            <img src="/IMG/odb_ser.png" alt="Centered Image" class="mb-5" width="765">
+                        </center><br>
+                        <li>
+                            Add ODBC (32-bit) โดยจะต้องใช้สิทธิ์ User Admin ในการ Add ODBC (32-bit) แบบ SQL Server Native Client และ Test Connection Database <br><br>
+                            <center>
+                                <img src="/IMG/odb3.png" alt="Centered Image" class="mb-5" width="750">
+                            </center><br>
+                           <li>
+                                ไปยัง Tab System DNS และ คลิก Add.. <br><br>
+                                <center>
+                                    <img src="/IMG/odb4.png" alt="Centered Image" class="mb-5" width="750">
+                               </center><br>
+                               <li>
+                                    ทำการเลือก Driver SQL Server Native Client <br><br>
+                                    <center>
+                                        <img src="/IMG/odb5.png" alt="Centered Image" class="mb-5" width="750">
+                                    </center><br>
+                                    <li>
+                                        ทำการะบุ ชื่อ ODBC Name และระบุ Database Server แล้วคลิก 
+                                        <strong>Next &gt;</strong> <br><br>
+                                        <center>
+                                            <img src="/IMG/odb6.png" alt="Centered Image" class="mb-5" width="750">
+                                        </center><br>
+                                        <li>
+                                            ระบุ User Name และ Password สำหรับเข้าใช้งาน Database จากนั้น คลิก 
+                                            <strong>Next ></strong> <br><br>
+                                            <center>
+                                                <img src="/IMG/odb7.png" alt="Centered Image" class="mb-5" width="750">
+                                            </center><br>
+                                            <li>
+                                                เลือก Database ที่ต้องการจะเชื่อมต่อ <br><br>
+                                                <center>
+                                                    <img src="/IMG/odb8.png" alt="Centered Image" class="mb-5" width="750">
+                                                </center><br>
+                                                <li>
+                                                    กดปุ่ม Finish เพื่อทำการสร้าง ODBC Data Source <br><br>
+                                                    <center>
+                                                        <img src="/IMG/odb9.png" alt="Centered Image" class="mb-5" width="750">
+                                                    </center><br>
+                                                    <li>
+                                                        ทำการทดสอบ Connect Database โดย และคลิก Test Data Source… <br><br>
+                                                        <center>
+                                                            <img src="/IMG/odb10.png" alt="Centered Image" class="mb-5" width="750">
+                                                        </center><br>
+                                                    </li>
+                                                </li>
+                                            </li>
+                                        </li>
+                                    </li>
+                               </li>
+                           </li>
+                        </li>
+                   </li>
+                </li>
+            </ol>
+        </ul>
+    </div>
+</body>
+</html>

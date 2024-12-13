@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การกำหนดค่า Bonanza Investment Environment
+    </title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="mb-5">
+        <a 
+            href="/index.html">ย้อนกลับ
+        </a>
+        <ul>
+            <h3>
+                การกำหนดค่า Bonanza Investment Environment
+            </h3>
+            <ol>
+                ขั้นตอนการกำหนดค่า Bonanza Investment Environment มีดังนี้ <br><br>
+                <ol>
+                    <ul>
+                        1. Folder Application Local บนเครื่อง client เพื่อใช้เก็บโปรแกรม Application ของระบบและไฟล์การใช้งานระบบของ User โดย User สามารถมีสิทธิ์เข้าถึง Read/Write ได้ ยกตัวอย่างเช่น Drive C:\Bonanza การกำหนดค่าในขั้นตอนนี้จะเรียกว่า 
+                        <strong>Local Path</strong>
+                    </ul>
+                </ol><br>
+                โครงสร้าง Folder และโปรแกรมสำหรับใช้งานหลักๆ ของ <strong>Local Path</strong> มีดังนี้ <br><br>
+                    <center>
+                        <img src="/IMG/bnz1.png" alt="Centered Image" class="mb-5" width="750">
+                    </center>
+                <br>
+                <ol>
+                    <ul>
+                        2. Folder Application Server จะเป็น Share Folder สำหรับใช้งานร่วมกันของระบบ และมีBonanza Package อยู่ที่ Folder Package ในขั้นตอนนี้จะเรียกว่า <strong>Server Path</strong> Mapping Network Drive จาก ...\storage\invest_client_home
+                    </ul>
+                </ol><br>
+                โครงสร้าง Folder และโปรแกรมสำหรับใช้งานหลักๆ ของ <strong>Server Path</strong> มีดังนี้ <br><br>
+                    <center>
+                        <img src="/IMG/bnz2.png" alt="Centered Image" class="mb-5" width="750">
+                    </center>
+                <br>
+                <ol>
+                    <ul>
+                        3. ทำการสร้าง shortcut บน desktop จากไฟล์ดังนี้ Administration.exe, Operation.exe, EnvSetup.exe ,InvestReg.exe <br>
+                        (โดยการคลิ๊กขวาบนไฟล์นั้นๆ ➢ Send to ➢ Desktop (Create shortcut))
+                    </ul><br>
+                    <center>
+                        <img src="/IMG/bnz3.png" alt="Centered Image" class="mb-5" width="750">
+                    </center>
+                    <ul><br>
+                        <strong>(Optional)</strong>ในกรณีที่ติดตั้ง Bonanza Package ไว้ใน Local Path ของเครื่อง Client อยู่แล้วอาจไม่จำเป็นต้องสร้าง Shortcut ก็ได้ <br><br>
+                        <strong>(Optional)</strong> สามารถสร้าง Shortcut ไว้ใน Local Path ของ User ด้วยเพื่อความสะดวกในการใช้งานกรณีบน Desktop มี Shortcut จำนวนมาก
+                    </ul><br>
+                    <center>
+                        <img src="/IMG/bnz4.png" alt="Centered Image" class="mb-5" width="750">
+                    </center><br>
+                </ol>
+            </ol>
+        </ul>
+    </div>
+</body>
+</html>

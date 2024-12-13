@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การกำหนดค่า Wmsl.Incubator.Configuration.UI.exe</title>
+</head>
+<body>
+    <div class="mb-5">
+        <a 
+            href="/index.html">ย้อนกลับ
+        </a>
+        <ul>
+            <ol>
+            <h3>
+                การกำหนดค่า Wmsl.Incubator.Configuration.UI.exe
+            </h3>
+                <ul>
+                    1. ไปที่ C:\Bonanza\Operation\Buc <br><br>
+                    <center>
+                        <img src="/IMG/wm1.png" alt="Centered Image" class="mb-5" width="750">
+                    </center><br>
+                    2. คลิกขวา Run as administrator ที่ Wmsl.Incubator.Configuration.UI.exe ตามรูป<br><br>
+                    <center>
+                        <img src="/IMG/wm2.png" alt="Centered Image" class="mb-5" width="750">
+                    </center><br>
+                    3. แสดงหน้าจอสำหรับกำหนด Environment Bonanza Universal Configuration <br><br>
+                    <center>
+                        <img src="/IMG/wm3.png" alt="Centered Image" class="mb-5" width="750">
+                    </center><br>
+                    <strong>กำหนดค่าใน Tab Application</strong><br><br>
+                    a. Bonanza Path = ค่าเดียวกับ Local Path ใน ENVSetup.EXE <br>
+                    b. Local Path = ค่าเดียวกับ Local Path ใน ENVSetup.EXE <br>
+                    c. Server Path = ค่าเดียวกับ Server Path ใน ENVSetup.EXE <br>
+                    d. Layout Path = ค่าเดียวกับ Local Path ใน ENVSetup.EXE <br>
+                    e. สามารถเปิด ENVSetup.EXE เพื่อ Copy ค่ามาใส่ได้ <br><br>
+                    <center>
+                        <img src="/IMG/wm4.png" alt="Centered Image" class="mb-5" width="800">
+                    </center><br>
+                    <strong>
+                        กำหนดค่าใน Tab Database
+                    </strong><br><br>
+                    a. Database Provider ให้เลือก SQL Server <br>
+                    b. Server ให้ตรงกับ DB SERVER ใน ENVSetup.EXE <br>
+                    c. Port : ระบุ Port ของ SQL server <br>
+                    d. Database Name ให้ตรงกับ DB NAME ใน ENVSetup.EXE <br>
+                    e. Default Schema = ค่าว่าง <br>
+                    f. User = ค่าว่าง <br>
+                    g. Password = ค่าว่าง <br>
+                    h. ODBC ให้ระบุเหมือน Database Name หรือ ODBC Name ตามที่กำหนดไว้ <br><br>
+                    <center>
+                        <img src="/IMG/wm5.png" alt="Centered Image" class="mb-5" width="800">
+                    </center><br>
+                    <strong>
+                        กำหนดค่าใน Tab Interface 
+                    </strong><br><br>
+                    a. Sever Name : Interface Server Name เหมือนใน ENVSetup.EXE <br>
+                    b. Port เหมือนใน ENVSetup.EXE ใช้ค่า default ของระบบ <br>
+                    c. Username: ใช้ค่า default ของระบบ <br>
+                    d. Password: ใช้ค่า default ของระบบ <br><br>
+                    <center>
+                        <img src="/IMG/wm6.png" alt="Centered Image" class="mb-5" width="800">
+                    </center><br>
+                    <strong>
+                        กำหนดค่าใน Tab Winserv
+                    </strong><br><br>
+                    a. Winserv IP ระบุ URL หรือ IP ของ Server ที่ติดตั้ง Invest-Service API (InterfaceNetCore) <br>
+                    b. Check box Https ติ๊กเลือกเมื่อมีการตั้งค่า Invest-Service API เป็นแบบ Https <br>
+                    c. Winserv Port ระบ Port ID ที่ใช้เชื่อมต่อ Invest-Service API <br>
+                    d. Gateway IP:PORT: ระบุ URL หรือ IP ของ Server ที่ติดตั้ง Gateway Service และ Port ID ตามด้วย 
+                    “/api” (กำหนดค่าเหมือน Gateway_prefix) <br><br>
+                    <center>
+                        <img src="/IMG/wm7.png" alt="Centered Image" class="mb-5" width="800">
+                    </center><br>
+                    4. ทดสอบ Heartbeat ทั้งส่วน Bonanza Gateway และ Bonanza Winserv จะต้องสามารถใช้งานได้ดังรูปตัวอย่าง <br><br>
+                    <center>
+                        <img src="/IMG/wm8.png" alt="Centered Image" class="mb-5" width="700">
+                        <img src="/IMG/wm8_1.png" alt="Centered Image" class="mb-5" width="750">
+                    </center><br>
+                    5. กด Save เพื่อ บันทึกค่า BUC จะถูกบันทึกที่ C:\Bonanza\Operation บันทึกไฟล์ชื่อ buc.propeties <br><br>
+                    <center>
+                        <img src="/IMG/wm9.png" alt="Centered Image" class="mb-5" width="800">
+                    </center><br>
+                </ul>
+            </ol>
+        </ul>
+    </div>
+</body>
+</html>

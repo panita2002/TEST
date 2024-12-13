@@ -28,9 +28,13 @@
                     <ul>
                         a. เปิด Local Security Policy > Security Settings > Local Policies > User Rights Assignment >
                         Log on as a Service <br><br>
-                        <img src="/IMG/boa1.png" alt="Centered Image" class="mb-5" width="700"><br><br>
+                        <center>
+                            <img src="/IMG/boa1.png" alt="Centered Image" class="mb-5" width="700"><br><br>
+                        </center>
                         b. ให้กดปุ่ม Add User or Group… แล้วเพิ่ม User ที่จะ Log on (เช่น ตัวอย่างคือ svcctd_dev) <br><br>
-                        <img src="/IMG/boa2.png" alt="Centered Image" class="mb-5" width="700"><br><br> 
+                        <center>
+                            <img src="/IMG/boa2.png" alt="Centered Image" class="mb-5" width="700"><br><br> 
+                        </center>
                     </ul>
                     ในกรณีนี้เราจะเลือกเป็น user domain : svcctd_dev
                 </li>
@@ -39,15 +43,21 @@
                     <ul>
                         a. แก้ Credential ให้เป็น <Domain or Computer Name>\<User as Log on> (เช่น ตัวอย่าง
                         Computer Name เป็น gsb และ User as Log on เป็น svcctd_dev ) <br><br>
-                        <img src="/IMG/boa3.png" alt="Centered Image" class="mb-5" width="700"> <br>
+                        <center>
+                            <img src="/IMG/boa3.png" alt="Centered Image" class="mb-5" width="700"> <br>
+                        </center>
                     </ul>
                 </li>
                 <li>
                     ให้นำ command ที่แก้ในไฟล์ NewWindowService.ps1 ไปรันด้วย Powershell as Administrators <br>
-                    <img src="/IMG/boa4.png" alt="Centered Image" class="mb-5" width="700"><br>
+                    <center>
+                        <img src="/IMG/boa4.png" alt="Centered Image" class="mb-5" width="700"><br>
+                    </center>
                 </li>
                 จะขึ้น dialog ให้กรอก password ของ user ที่ใช้เป็น service account <br><br>
-                <img src="/IMG/boa5.png" alt="Centered Image" class="mb-5" width="700"><br>
+                <center>
+                    <img src="/IMG/boa5.png" alt="Centered Image" class="mb-5" width="700"><br>
+                </center>
                 ขั้นตอนถอดการติดตั้ง Bonanza Investment แบบ Windows Service
                 <ul>
                     1. Command ผ่าน cmd (ต้อง Run as administrator)<br><br>
@@ -63,22 +73,32 @@
                 รายการ Configuration ที่สำคัญมีดังนี้ 
                 <ul><br>
                     $WMSL_INV_HOME\buc.properties <br><br>
-                    <img src="/IMG/boa6.png" alt="Centered Image" class="mb-5" width="700"><br><br>
+                    <center>
+                        <img src="/IMG/boa6.png" alt="Centered Image" class="mb-5" width="700"><br><br>
+                    </center>    
                     $BONANZA_HOME\Invest-service\webapi\Config\webapi.log4net.config <br><br>
-                    <img src="/IMG/boa7.png" alt="Centered Image" class="mb-5" width="1100"><br>
-                    <img src="/IMG/1boa8.png" alt="Centered Image" class="mb-5" width="700"><br>
-                    <img src="/IMG/2boa8.png" alt="Centered Image" class="mb-5" width="700"><br>
+                    <center>
+                        <img src="/IMG/boa7.png" alt="Centered Image" class="mb-5" width="1100"><br>
+                        <img src="/IMG/1boa8.png" alt="Centered Image" class="mb-5" width="700"><br>
+                        <img src="/IMG/2boa8.png" alt="Centered Image" class="mb-5" width="700"><br>
+                    </center>
                     $BONANZA_HOME\Invest-service\webapi\appsettings.json <br><br>
-                    <img src="/IMG/boa9.png" alt="Centered Image" class="mb-5" width="700"><br>
-                    <img src="/IMG/boa9_1.png" alt="Centered Image" class="mb-5" width="750"><br>
+                    <center>
+                        <img src="/IMG/boa9.png" alt="Centered Image" class="mb-5" width="700"><br>
+                        <img src="/IMG/boa9_1.png" alt="Centered Image" class="mb-5" width="750"><br>
+                    </center>
                     $BONANZA_HOME\Invest-service\webapi\wwwroot\invest\assets\config\environment-config.json <br>
-                    <img src="/IMG/boa10.png" alt="Centered Image" class="mb-5" width="750"><br>
-                    <img src="/IMG/boa11.png" alt="Centered Image" class="mb-5" width="753"><br><br>
+                    <center>
+                        <img src="/IMG/boa10.png" alt="Centered Image" class="mb-5" width="750"><br>
+                        <img src="/IMG/boa11.png" alt="Centered Image" class="mb-5" width="753"><br><br>
+                    </center>
                     $BONANZA_HOME\Invest-service\webapi\wwwroot\index.html <br><br>
                     <ul>
                         เนื่องจาก Traefik ตั้งค่า path สำหรับ Invest ให้เป็น /invest/ จึงต้องมีการตรวจสอบว่า file index.html มีการ
                         กำหนด tag มีค่าเป็น <code>&lt;base href="/invest/"&gt;</code> หรือไม่ <br><br>
-                        <img src="/IMG/boa12.png" alt="Centered Image" class="mb-1" width="750"><br>
+                        <center>
+                            <img src="/IMG/boa12.png" alt="Centered Image" class="mb-1" width="750"><br>
+                        </center>
                     </ul>
                 </ul><br>
             </ol>
