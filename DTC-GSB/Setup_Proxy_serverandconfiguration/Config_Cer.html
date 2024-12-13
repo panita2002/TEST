@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การ config certificate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mb-5">
+        <a href="/index.html">ย้อนกลับ</a>
+        <ol>
+            <h2>
+                การ config certificate
+            </h2>
+            <p>
+                ใช้ cert ที่มีการขอ register name ที่ DNS เป็น intraWebCustodianSIT.gsb และ
+                intraWebCustodianUAT.gsb ที่ธนาคาร generate ให้ supporting_software\cert
+            </p>
+            <ul>
+                - intraWebCustodianSIT.gsb.cer <br>
+                - intraWebCustodianSIT.gsb.p12 <br>
+                - intraWebCustodianUAT.gsb.cer <br>
+                - intraWebCustodianUAT.gsb.p12
+            </ul>
+                <p>
+                    จะต้องมีการแปลง .p12 เป็น .key (เนื่องจาก traefik ต้องการ key ที่ไม่มีการระบุ passphrase จึงต้อง
+                    export ออกมาใหม่ด้วยคำสั่ง
+                </p>
+                    <code>## Generate server private key file server.key <br>
+                    openssl pkcs12 -in <<.p12 file name>> -nocerts -nodes -out <<.key file>> 
+                    </code>
+                <p>
+                    โดยใช้ program openssl ใน supporting_software\util\OpenSSL-1.1.1h_win32
+                    เช่น
+                </p>
+                <code>
+                    openssl pkcs12 -in intraWebCustodianSIT.gsb.p12 -nocerts -nodes -out intraWebCustodianSIT.gsb.key
+                </code>
+                <p>
+                    copy file .cer และ .key วางที่ $TRAEFIK_HOME/cert ตรวจสอบ file web.toml ส่วน ระบุ path ของ
+                    certificate แบบ full path 
+                </p>
+            </ol>
+      </div>
+</body>
+</html>

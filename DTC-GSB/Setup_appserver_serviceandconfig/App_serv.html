@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>config firewall ของเครื่อง Application Server</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mb-5">
+        <a href="/index.html">ย้อนกลับ</a>
+        <ul>
+            <h2>config firewall ของเครื่อง Application Server</h2>
+          <p>การสร้าง Inbound Rule บนพอร์ต 8443 Application Server</p>
+          <ol>
+            <li>
+              เปิด Windows Defender Firewall with Advanced Security :
+              <ul>a. กด Win + R เพื่อเปิดหน้าต่าง Run <br>
+                  b. พิมพ์คำสั่ง wf.msc แล้วกด Enter <br>
+                <center><img src="/IMG/5.1.png" alt="Installation Guide" class="mb-5" width="500"><br></center>
+                  c. หน้าต่าง Windows Defender Firewall with Advanced Security จะเปิดขึ้น
+              </ul>
+            <li>
+              เลือก Inbound Rules :
+              <ul>
+                a. ในแถบเมนูทางด้านซ้าย ให้เลือก Inbound Rules (กฎสำหรับการรับข้อมูลขาเข้า)
+            </ul>
+              <li>
+                สร้างกฎใหม่ :
+              </li>
+              <ul>a. ในเมนูทางขวามือ ให้คลิกที่ New Rule... เพื่อเริ่มสร้างกฎใหม่</ul>
+              <li>
+                เลือกประเภทของกฎเป็น Port :
+                <ul>
+                  a. ในหน้าต่าง New Inbound Rule Wizard ให้เลือกประเภทของกฎเป็น Port จากนั้นคลิก Next
+                </ul>
+                <center><img src="/IMG/5.2.png" alt="Installation Guide" class="mb-5" width="500"></center>
+              </li>
+              <li>เลือกโปรโตคอลและกำหนดพอร์ต :
+                <ul>
+                  a. เลือก TCP (โปรโตคอลที่ Tomcat ใช้) <br>
+                  b. ในช่อง Specific local ports ให้พิมพ์หมายเลขพอร์ต 8443 จากนั้นคลิก Next
+                </ul>
+                <center><img src="/IMG/5.3.png" alt="Installation Guide" class="mb-5" width="500"></center>
+              </li>
+              <li>เลือก Allow the connection :
+                <ul>a. เลือก Allow the connection เพื่ออนุญาตการรับข้อมูลบนพอร์ตนี้ จากนั้นคลิก Next
+                </ul>
+              </li>
+              <li>เลือก Profile :
+                <ul>
+                a. เลือก Profile ที่คุณต้องการให้กฎนี้มีผล เช่น : <br>
+                b. Domain: สำหรับเครือข่ายโดเมน <br>
+                c. Private: สำหรับเครือข่ายส่วนตัว <br>
+                d. Public: สำหรับเครือข่ายสาธารณะ <br>
+                e. เลือกโปรไฟล์ที่ต้องการแล้วคลิก Next
+                </ul>
+              <center><img src="/IMG/5.4.png" alt="Installation Guide" class="mb-5" width="500"></center>
+              </li>
+              <li>ตั้งชื่อกฎเป็น "Tomcat" :
+                <ul>a. ในช่อง Name ให้ตั้งชื่อกฎเป็น Tomcat <br>
+                    b. ในช่อง Description คุณสามารถระบุคำอธิบายเพิ่มเติมได้ (ไม่จำเป็นต้องกรอกก็ได้) <br>
+                    c. คลิก Finish เพื่อบันทึกกฎ
+                </ul>
+              </li>
+            <p>การสร้าง Inbound Rule บนพอร์ต 10456 Application Server</p>
+            <ol>
+              <li>
+                เปิด Windows Defender Firewall with Advanced Security :
+                <ul>
+                  a. กด Win + R เพื่อเปิดหน้าต่าง Run <br>
+                  b. พิมพ์คำสั่ง wf.msc แล้วกด Enter
+                  <center><img src="/IMG/5.5.png" alt="Installation Guide" class="mb-5" width="500"></center><br>
+                  c. หน้าต่าง Windows Defender Firewall with Advanced Security จะเปิดขึ้น
+                </ul>
+              </li>
+              <li>เลือก Inbound Rules :
+                <ul>
+                  a. ในแถบเมนูทางด้านซ้าย ให้เลือก Inbound Rules (กฎสำหรับการรับข้อมูลขาเข้า)
+                </ul>
+              </li>
+              <li>สร้างกฎใหม่ :
+                <ul>
+                  a. ในเมนูทางขวามือ ให้คลิกที่ New Rule... เพื่อเริ่มสร้างกฎใหม่
+                </ul>
+              </li>
+              <li>เลือกประเภทของกฎเป็น Port :
+                <ul>
+                  a. ในหน้าต่าง New Inbound Rule Wizard ให้เลือกประเภทของกฎเป็น Port จากนั้นคลิก Next
+                </ul>
+                <center><img src="/IMG/5.6.png" alt="Installation Guide" class="mb-5" width="500"></center>
+              </li>
+              <li>เลือกโปรโตคอลและกำหนดพอร์ต :
+                <ul>
+                  a. เลือก TCP (โปรโตคอลที่ webapi ใช้) <br>
+                  b. ในช่อง Specific local ports ให้พิมพ์หมายเลขพอร์ต 10456 จากนั้นคลิก Next <br>
+                  <center><img src="/IMG/5.7.png" alt="Installation Guide" class="mb-5" width="500"></center>
+                </ul>
+              </li>
+              <li>เลือก Allow the connection :
+                <ul>
+                  a. เลือก Allow the connection เพื่ออนุญาตการรับข้อมูลบนพอร์ตนี้ จากนั้นคลิก Next
+                </ul>
+              </li>
+              <li>เลือก Profile :
+                <ul>
+                  a. เลือก Profile ที่คุณต้องการให้กฎนี้มีผล เช่น : <br>
+                  b. Domain: สำหรับเครือข่ายโดเมน <br>
+                  c. Private: สำหรับเครือข่ายส่วนตัว <br>
+                  d. Public: สำหรับเครือข่ายสาธารณะ <br>
+                  e. เลือกโปรไฟล์ที่ต้องการแล้วคลิก Next
+                  <center><img src="/IMG/5.8.png" alt="Installation Guide" class="mb-5" width="500"></center>
+                </ul>
+              </li>
+              <li>
+                ตั้งชื่อกฎเป็น "Bonanza webapi" :
+                <ul>
+                  a. ในช่อง Name ให้ตั้งชื่อกฎเป็น Bonanza webapi <br>
+                  b. ในช่อง Description คุณสามารถระบุคำอธิบายเพิ่มเติมได้ (ไม่จำเป็นต้องกรอกก็ได้) <br>
+                  c. คลิก Finish เพื่อบันทึกกฎ
+                </ul>
+              </li>
+            </ol>
+            </li>
+            </li>
+          </ol>
+        </ul>
+    </div>
+</body>
+</html>

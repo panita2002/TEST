@@ -51,7 +51,7 @@
   background-color: #fff; /* สีเมื่อ hover */
 }
 
-.mb-5 {
-  display: inline-block;
-  
+.img {
+  max-width: 100%; /* ป้องกันภาพล้น */
+  height: auto;    /* ปรับขนาดอัตโนมัติ */
 }

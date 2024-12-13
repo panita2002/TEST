@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดตั้ง Pre-config สำหรับ tomcat (CTD-Front, Gateway)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mb-5">
+        <a href="/index.html">ย้อนกลับ</a>
+        <ul>
+            <h2>
+                ติดตั้ง Pre-config สำหรับ tomcat (CTD-Front, Gateway)
+            </h2>
+        </ul>
+          <ol>
+            Set Folder Permission <br>
+            Login ด้วย user svcctdadmin_dev 
+          </ol>
+          <ul>
+          <ol>
+            <li>
+                copy folder conf จาก package supporting_software\deploy\app\tomcat วางที่ $CATALINA_HOME <br>
+                และ folder Bonanaza จาก package supporting_software\deploy\app วางที่ $BONANZA_HOME 
+            </li>
+            <br>
+            <li>
+                รัน script เพื่อปรับสิทธิ์ใน folder ที่เกี่ยวข้อง
+                <ul>
+                    a. copy folder permission จาก package supporting_software\deploy\app วางที่ download <br>
+                    b. เปิด powershell ด้วยสิทธิ์ administrator <br>
+                    c. cd ไปยัง path download ที่วาง <br>
+                    <br>
+                    <center>
+                        <img src="/IMG/tom1.png" alt="Centered Image" class="mb-5" width="700">
+                    </center>
+                    <br>
+                    d. execute ด้วยคำสั่ง <br> <br>
+                    <code>
+                        .\change_permission_v5.ps1
+                    </code> <br><br>
+                    e. กด 2 เลือก menu เปลี่ยน permission จาก list folder <br><br>
+                    <center>
+                        <img src="/IMG/tom2.png" alt="Centered Image" class="mb-5" width="700">
+                    </center> <br>
+                    f. รอจน script ทำงานเสร็จ <br><br>
+                    <center>
+                        <img src="/IMG/tom3.png" alt="Centered Image" class="mb-5" width="700">
+                    </center>
+                </ul><br><br>
+                รายการ Configuration ที่สำคัญมีดังนี้ <br><br>
+                <ul>
+                    $CATALINA_HOME\conf\bond\application-custom.yaml
+                </ul><br><br>
+                <center>
+                    <img src="/IMG/tom4.png" alt="Centered Image" class="mb-5" width="500">
+                </center><br>
+                <center>
+                    <img src="/IMG/tom5.png" alt="Centered Image" class="mb-5" width="550">
+                </center>
+                <br>
+                <ul>
+                    $BONANZA_HOME\Bond\web_config\web\assets\config\environment-config.json
+                </ul><br>
+                <center>
+                    <img src="/IMG/tom6.png" alt="Centered Image" class="mb-5" width="550">
+                </center><br><br>
+                <ul>
+                    $CATALINA_HOME\conf\gateway-ws\application-custom.yaml
+                </ul><br><br>
+                <center>
+                    <img src="/IMG/tom7.png" alt="Centered Image" class="mb-5" width="550">
+                </center><br>
+                <center>
+                    <img src="/IMG/tom8.png" alt="Centered Image" class="mb-5" width="550">
+                </center>
+            </li>
+            </ol>
+        </ul>
+          
+</body>
+</html>

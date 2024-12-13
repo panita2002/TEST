@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดตั้ง Pre-config สำหรับ Bonanza webapi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="mb-5">
+        <a href="/index.html">ย้อนกลับ</a>
+        <ul>
+            <h2>
+                ติดตั้ง Pre-config สำหรับ Bonanza webapi
+            </h2>
+        </ul>
+          <ol>
+            ไปที่ $CATALINA_HOME/bin เปิด file tomcat10w.exeขั้นตอนการติดตั้ง Bonanza Investment WebAPI แบบ Windows Service Login ด้วย user svcctdadmin_dev  
+          </ol>
+          <ul>
+            <ol>
+                <li>
+                    copy folder Bonanaza จาก package supporting_software\deploy\app วางที่ $BONANZA_HOME (ข้าม
+                    ได้เนื่องจากทำแล้วในข้อ 5.3)
+                </li>
+                <li>
+                    ตั้งค่า Local Security Policy ใน User ที่รันโปรแกรม
+                    <ul>
+                        a. เปิด Local Security Policy > Security Settings > Local Policies > User Rights Assignment >
+                        Log on as a Service <br><br>
+                        <img src="/IMG/boa1.png" alt="Centered Image" class="mb-5" width="700"><br><br>
+                        b. ให้กดปุ่ม Add User or Group… แล้วเพิ่ม User ที่จะ Log on (เช่น ตัวอย่างคือ svcctd_dev) <br><br>
+                        <img src="/IMG/boa2.png" alt="Centered Image" class="mb-5" width="700"><br><br> 
+                    </ul>
+                    ในกรณีนี้เราจะเลือกเป็น user domain : svcctd_dev
+                </li>
+                <li>
+                    แก้ไข ไฟล์ NewWindowService.ps1 ที่ $BONANZA_HOME\Invest-service
+                    <ul>
+                        a. แก้ Credential ให้เป็น <Domain or Computer Name>\<User as Log on> (เช่น ตัวอย่าง
+                        Computer Name เป็น gsb และ User as Log on เป็น svcctd_dev ) <br><br>
+                        <img src="/IMG/boa3.png" alt="Centered Image" class="mb-5" width="700"> <br>
+                    </ul>
+                </li>
+                <li>
+                    ให้นำ command ที่แก้ในไฟล์ NewWindowService.ps1 ไปรันด้วย Powershell as Administrators <br>
+                    <img src="/IMG/boa4.png" alt="Centered Image" class="mb-5" width="700"><br>
+                </li>
+                จะขึ้น dialog ให้กรอก password ของ user ที่ใช้เป็น service account <br><br>
+                <img src="/IMG/boa5.png" alt="Centered Image" class="mb-5" width="700"><br>
+                ขั้นตอนถอดการติดตั้ง Bonanza Investment แบบ Windows Service
+                <ul>
+                    1. Command ผ่าน cmd (ต้อง Run as administrator)<br><br>
+                    <code>
+                        sc delete BonanzaInvestment
+                    </code><br><br>
+                    2. หรือ Command ผ่าน PowerShell (ต้อง Run as administrator) <br><br>
+                    <code>
+                        Remove-Service -Name BonanzaInvestment
+                    </code><br><br>
+                    3.ต้อง Restart ก่อนการติดตั้งซ้ำ
+                </ul><br>
+                รายการ Configuration ที่สำคัญมีดังนี้ 
+                <ul><br>
+                    $WMSL_INV_HOME\buc.properties <br><br>
+                    <img src="/IMG/boa6.png" alt="Centered Image" class="mb-5" width="700"><br><br>
+                    $BONANZA_HOME\Invest-service\webapi\Config\webapi.log4net.config <br><br>
+                    <img src="/IMG/boa7.png" alt="Centered Image" class="mb-5" width="1100"><br>
+                    <img src="/IMG/1boa8.png" alt="Centered Image" class="mb-5" width="700"><br>
+                    <img src="/IMG/2boa8.png" alt="Centered Image" class="mb-5" width="700"><br>
+                    $BONANZA_HOME\Invest-service\webapi\appsettings.json <br><br>
+                    <img src="/IMG/boa9.png" alt="Centered Image" class="mb-5" width="700"><br>
+                    <img src="/IMG/boa9_1.png" alt="Centered Image" class="mb-5" width="750"><br>
+                    $BONANZA_HOME\Invest-service\webapi\wwwroot\invest\assets\config\environment-config.json <br>
+                    <img src="/IMG/boa10.png" alt="Centered Image" class="mb-5" width="750"><br>
+                    <img src="/IMG/boa11.png" alt="Centered Image" class="mb-5" width="753"><br><br>
+                    $BONANZA_HOME\Invest-service\webapi\wwwroot\index.html <br><br>
+                    <ul>
+                        เนื่องจาก Traefik ตั้งค่า path สำหรับ Invest ให้เป็น /invest/ จึงต้องมีการตรวจสอบว่า file index.html มีการ
+                        กำหนด tag มีค่าเป็น <code>&lt;base href="/invest/"&gt;</code> หรือไม่ <br><br>
+                        <img src="/IMG/boa12.png" alt="Centered Image" class="mb-1" width="750"><br>
+                    </ul>
+                </ul><br>
+            </ol>
+          </ul>
+         
+</body>
+</html>
