@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การ start service ที่เครื่อง proxy</title>
+</head>
+<body>
+    <div class="col-md-9 p-4" id="content-tainer">
+        <div class="mb-5">
+            <a 
+                href="/index.html">ย้อนกลับ
+            </a>
+            <ul>
+                <h3>
+                    การ start service ที่เครื่อง proxy
+                </h3>
+                <ol>
+                    Login ด้วย user svcctdadmin_dev
+                    <ol>
+                        <li>
+                            เปิด Services Manager:
+                            <ul>
+                                a. กด Win + R เพื่อเปิดหน้าต่าง Run. <br>
+                                b. พิมพ์คำว่า services.msc แล้วกด Enter.
+                            </ul>
+                        </li>
+                        <li>
+                            ค้นหา Service ที่ชื่อว่า Apache Tomcat 10.1 (Tomcat10):
+                            <ul>
+                                a. ในหน้าต่าง Services, ค้นหารายการชื่อ Apache Tomcat 10.1 (Tomcat10) ในรายการ.
+                            </ul>
+                        </li>
+                        <li>
+                            Start Service:
+                            <ul>
+                                a. คลิกขวาที่ Service นั้น แล้วเลือก Start. <br>
+                                b. รอให้สถานะของ Service เปลี่ยนเป็น Running.
+                            </ul><br><br>
+                            <center>
+                                <img src="/IMG/prox1.png" alt="Centered Image" class="mb-5" width="750">
+                            </center><br>
+                            <ul>
+                                ทดสอบเข้าหน้า dashboard ของ traefik <br>
+                                http://intrawebcustodiansit.gsb:9000/dashboard/#/ <br>
+                                https://intrawebcustodiansit.gsb:8443/ping <br>
+                            </ul><br><br>
+                            <center>
+                                <img src="/IMG/prox2.png" alt="Centered Image" class="mb-5" width="750">
+                            </center><br>
+                        </li>
+                    </ol>
+                </ol>
+            </ul>
+        </div>
+        </div>
+</body>
+</html>

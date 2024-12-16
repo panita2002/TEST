@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deploy Bonanza Gateway</title>
+</head>
+<body>
+    <div class="col-md-9 p-4" id="content-tainer">
+        <div class="mb-5">
+            <a 
+                href="/index.html">ย้อนกลับ
+            </a>
+            <ul>
+                <h3>
+                    deploy Bonanza Gateway
+                </h3>
+                <ol>
+                    ขั้นตอนการ Deploy Bonanza Gateway <br>
+                    Login ด้วย user svcctdadmin_dev 
+                    <ol>
+                        <li>
+                            Remote Desktop ด้วย user svcctdadmin_dev
+                        </li>
+                        <li>
+                            เปิด Windows Services เพื่อสั่ง Stop Service Tomcat รอจนกว่าจะ stop สำเร็จ
+                        </li>
+                        <li>
+                            ตรวจสอบว่ามี folder install_custodian หรือไม่ ถ้าไม่มีให้สร้าง folder ชื่อ install_custodian ที่ Download
+                        </li>
+                        <li>
+                            Copy Package Server\Gateway ลงที่เครื่อง path install_custodian
+                        </li>
+                        <li>
+                            เปิด PowerShell ด้วยสิทธิ์ผู้ดูแลระบบ <br><br>
+                            <code>cd C:\Users\svcctdadmin_dev\Downloads\install_custodian\Gateway</code>
+                        </li><br>
+                        <li>
+                            ใช้คำสั่งต่อไปนี้เพื่อ extract ไฟล์ .zip <br><br>
+                            <code>Expand-Archive *.zip .</code>
+                        </li><br>
+                        <li>
+                            copy file gateway-ws.war จาก wars\ ที่ได้จากการ extract file วางที่ $WEB_CONTENT_DIR <br><br>
+                            <center>
+                                <img src="/IMG/de-api1.png" alt="Centered Image" class="mb-5" width="750">
+                            </center>
+                        </li><br><br>
+                        <li>
+                            ลบ folder Gateway ออกจาก install_custodian 
+                        </li><br><br>
+                    </ol>
+                </ol>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

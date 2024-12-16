@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การสร้าง database และ setup user database</title>
+</head>
+<body>
+    <div class="mb-5">
+        <a 
+            href="/index.html">ย้อนกลับ
+        </a>
+        <ul>
+            <h3>
+                การสร้าง database และ setup user database
+            </h3>
+            <ol>
+                ขั้นตอนการสร้างกฎ Inbound Rule บนพอร์ต 14330 Database Server
+                <ol>
+                    <li>
+                        เปิด Windows Defender Firewall with Advanced Security:
+                        <ul>
+                            a. กด Win + R เพื่อเปิดหน้าต่าง Run <br>
+                            b. พิมพ์คำสั่ง wf.msc แล้วกด Enter <br><br>
+                            <center>
+                                <img src="/IMG/con1.png" alt="Centered Image" class="mb-5" width="750">
+                            </center><br><br>
+                            c. หน้าต่าง Windows Defender Firewall with Advanced Security จะเปิดขึ้น
+                        </ul>
+                    </li>
+                    <li>
+                        เลือก Inbound Rules: <br>
+                        <ul>
+                            a. ในแถบเมนูทางด้านซ้าย ให้เลือก Inbound Rules (กฎสำหรับการรับข้อมูลขาเข้า)
+                        </ul>
+                    </li>
+                    <li>
+                        สร้างกฎใหม่: <br>
+                        <ul>
+                            a. ในเมนูทางขวามือ ให้คลิกที่ New Rule... เพื่อเริ่มสร้างกฎใหม
+                        </ul>
+                    </li>
+                    <li>
+                        เลือกประเภทของกฎเป็น Port: <br>
+                        <ul>
+                            a. ในหน้าต่าง New Inbound Rule Wizard ให้เลือกประเภทของกฎเป็น Port จากนั้นคลิก Next <br><br>
+                            <center>
+                                <img src="/IMG/con2.png" alt="Centered Image" class="mb-5" width="750">
+                            </center><br><br>
+                        </ul>
+                    </li>
+                    <li>
+                        เลือกโปรโตคอลและกำหนดพอร์ต: <br>
+                        <ul>
+                            a. เลือก TCP (โปรโตคอลที่ sqlserver ใช้) <br>
+                            b. ในช่อง Specific local ports ให้พิมพ์หมายเลขพอร์ต 5022, 14330, 14331 จากนั้นคลิก Next <br><br>
+                            <center>
+                                <img src="/IMG/con3.png" alt="Centered Image" class="mb-5" width="750">
+                            </center><br><br>
+                        </ul>
+                    </li>
+                    <li>
+                        เลือก Allow the connection: <br>
+                        <ul>
+                            a. เลือก Allow the connection เพื่ออนุญาตการรับข้อมูลบนพอร์ตนี้ จากนั้นคลิก Next
+                        </ul>
+                    </li>
+                    <li>
+                        เลือก Profile: <br>
+                        <ul>
+                            a. เลือก Profile ที่คุณต้องการให้กฎนี้มีผล เช่น: <br>
+                            b. Domain: สำหรับเครือข่ายโดเมน <br>
+                            c. Private: สำหรับเครือข่ายส่วนตัว <br>
+                            d. Public: สำหรับเครือข่ายสาธารณะ <br>
+                            e. เลือกโปรไฟล์ที่ต้องการแล้วคลิก Next <br><br>
+                            <center>
+                                <img src="/IMG/con4.png" alt="Centered Image" class="mb-5" width="750">
+                            </center><br><br>
+                        </ul>
+                    </li>
+                    <li>
+                        ตั้งชื่อกฎเป็น "sqlserver": <br>
+                        <ul>
+                            a. ในช่อง Name ให้ตั้งชื่อกฎเป็น sqlserver <br>
+                            b. ในช่อง Description คุณสามารถระบุคำอธิบายเพิ่มเติมได้ (ไม่จำเป็นต้องกรอกก็ได้) <br>
+                            c. คลิก Finish เพื่อบันทึกกฎ <br>
+                        </ul>
+                    </li>
+                </ol>
+            </ol>
+        </ul>
+    </div>
+</body>
+</html>

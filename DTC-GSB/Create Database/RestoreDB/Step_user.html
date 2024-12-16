@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ขั้นตอนการสร้างฐานข้อมูล User</title>
+</head>
+<body>
+    <div class="col-md-9 p-4" id="content-tainer">
+        <div class="mb-5">
+            <a 
+                href="/index.html">ย้อนกลับ
+            </a>
+            <ul>
+                <h3>
+                    ขั้นตอนการสร้างฐานข้อมูล User
+                </h3>
+                <ol>
+                    การสร้าง User ที่ใช้กับระบบ Bonanza สามารถทำได้ 2 วิธี คือ 
+                    <ol><br>
+                        <li>
+                            สร้าง User ผ่าน Script
+                            <li>
+                                สร้าง ผ่าน SQL Server Management Studio วิธี Manual
+                            </li>
+                        </li>
+                    </ol><br>
+                    <li>
+                        สร้าง User ผ่าน Script
+                        <ul>
+                            วิธีนี้สามารถรันผ่าน Administrator Command หรือ SQL Server Management Studio โดยสามารถใช้ Script ดังนี้ <br><br>
+                            <center>
+                                <img src="/IMG/use1.png" alt="Centered Image" class="mb-5" width="750">
+                            </center><br>
+                        </ul>
+                        <li>
+                            สร้าง User ผ่าน SQL Server Management Studio วิธี Manual <br><br>
+                            <ul>
+                                เปิดโปรแกรม SQL Server Management Studio ด้วย User ที่มีสิทธิ์ sysadmin <br><br>
+                                1) Tab Schemas ฐานข้อมูลเดิมไว้ก่อนเพื่อจะลบ user ที่ติดมากับฐานข้อมูล <br>
+                                เพราะ SQL SEVER จะไม่รู้จัก User ที่อยู่ในฐานข้อมูล แต่เนื่องจาก user เป็น owner ของ Schemas SQL Server <br>
+                                จะไม่อนุญาตให้ลบ user ดังกล่าวออกจากฐานข้อมูลได้ จึงต้องแก้ Schemas ให้เป็น dbo ก่อน <br><br>
+                                <ul>
+                                    ในหน้าต่าง SQL Server Management Studio Object Explorer เลือก Database คลิกที่ ชื่อฐานข้อมูล แล้วขยายออก เลือกที่ Security ขยายออก <br>
+                                    เลือกที่ Schemas แล้วเลือกที่ INVEST ยกตัวอย่างฐานข้อมูลชื่อ CTDGSBDB
+                                </ul><br>
+                                <ul>
+                                    Database ➢ CTDGSBDB ➢ Security ➢ Schemas ➢ INVEST <br><br>
+                                    <center>
+                                        <img src="/IMG/use2.png" alt="Centered Image" class="mb-5" width="750">
+                                    </center>
+                                </ul><br>
+                                2) คลิกขวาเลือก Properties <br><br>
+                                <center>
+                                    <img src="/IMG/use3.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                3) จะมีหน้าต่าง Schema Properties - INVEST ขึ้นมา <br><br>
+                                <center>
+                                    <img src="/IMG/use4.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                4) ในช่อง schema owner ให้พิมพ์ dbo ลงไปแล้ว คลิก OK <br><br>
+                                <center>
+                                    <img src="/IMG/use5.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                5) ลบ user ที่ติดมากับฐานข้อมูลออก จะมี 2 User ที่ใช้กับระบบ Bonanza คือ User invest และ bonanza ในหน้าต่าง SQL Server Management Studio <br>
+                                เลือก Database คลิกที่ชื่อฐานข้อมูล แล้วขยายออก เลือกที่ Security ขยายออก เลือกที่ Schemas แล้วเลือกที่ Users <br><br>
+                                <ul>
+                                    ยกตัวอย่างฐานข้อมูลชื่อ CTDGSBDB <br>
+                                    Database ➢ CTDGSBDB ➢ Security ➢ Schemas ➢ Users <br><br>
+                                    <center>
+                                        <img src="/IMG/use6.png" alt="Centered Image" class="mb-5" width="750">
+                                    </center><br>
+                                </ul>
+                                6) คลิกขวา ที่ User Bonanza แล้วเลือก Delete <br><br>
+                                <center>
+                                    <img src="/IMG/use7.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                7)จะเปิดหน้าต่าง Delete Object แล้วกด OK <br><br>
+                                <center>
+                                    <img src="/IMG/use8.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                8) คลิกขวา ที่ User invest แล้วเลือก Delete <br><br>
+                                <center>
+                                    <img src="/IMG/use9.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                9)SQL SERVER จะตรวจพบว่า ชื่อ user ที่กำลังลบมีชื่อเดียวกับ Schema ในฐานข้อมูลจะถามว่าจะลบ schema ด้วยหรือไม่ ให้กด NO <br><br>
+                                <center>
+                                    <img src="/IMG/use10.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                10) จะเปิดหน้าต่าง Delete Object แล้วกด OK <br><br>
+                                <center>
+                                    <img src="/IMG/use11.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                11) เมื่อตรวจสอบที่ User ของฐานข้อมูลจะพบว่า User bonanza และ invest ถูกลบ ออกจากฐานข้อมูลแล้ว <br><br>
+                                <center>
+                                    <img src="/IMG/use12.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                12) สร้าง User สำหรับ ระบบ Bonanza โดยสร้างจากระดับ SQL server user หน้าต่าง SQL Server Management Studio Object Explorer เลือก Security ขยาย เลือก Logins <br><br>
+                                <center>
+                                    <img src="/IMG/use13.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                13) คลิกขวาที่ Logins เลือก New Login…เพื่อสร้าง User invest <br><br>
+                                <center>
+                                    <img src="/IMG/use14.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                14) หน้าต่าง Login - New คลิก Select a page คลิกเลือก General
+                                <ul>
+                                    กำหนด Login name = invest <br>
+                                    เลือก SQL Server authentication แล้วใส่ Password = invest , Confirm password = invest <br>
+                                    แล้วเอาเครื่องหมาย เอาเครื่องหมาย &check; ออกจากช่อง Enforce password policy <br>
+                                    <strong>หมายเหตุ: </strong>สามารถกำหนด Password อื่นได้ ตามต้องการ โดยความยาวไม่เกิน 10 ตัว <br><br>
+                                    <center>
+                                        <img src="/IMG/use15.png" alt="Centered Image" class="mb-5" width="750">
+                                    </center><br>
+                                </ul>
+                                15) หน้าต่าง Login-New คลิก Select a page คลิกเลือก User Mapping ทำเครื่องหมาย &check; ตรงชื่อฐานข้อมูล ช่อง Default Schema ให้พิมพ์ INVEST จากนั้นกดปุ่ม OK <br><br>
+                                <center>
+                                    <img src="/IMG/use16.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                16) จะมี User invest เพิ่มขึ้นมา <br><br>
+                                <center>
+                                    <img src="/IMG/use17.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                17) คลิกขวาที่ Logins เลือก New Login…เพื่อสร้าง User Bonanza <br><br>
+                                <center>
+                                    <img src="/IMG/use18.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                18) หน้าต่าง Login - New คลิก Select a page คลิกเลือก General <br>
+                                <ul>
+                                    กำหนด Login name = bonanza <br>
+                                    เลือก SQL Server authentication แล้วใส่ Password = bonanza , Confirm password = bonanza <br>
+                                    แล้วเอาเครื่องหมาย เอาเครื่องหมาย &check; ออกจากช่อง Enforce password policy <br>
+                                    <strong>หมายเหตุ: </strong>สามารถกำหนด Password อื่นได้ ตามต้องการ โดยความยาวไม่เกิน 10 ตัว <br><br>
+                                    <center>
+                                        <img src="/IMG/use19.png" alt="Centered Image" class="mb-5" width="750">
+                                    </center><br>
+                                </ul>
+                                19) หน้าต่าง Login- New คลิก Select a page คลิกเลือก User Mapping
+                                <ul>
+                                    ทำเครื่องหมาย &check; ตรงชื่อฐานข้อมูล ช่อง Default Schema ให้พิมพ์ INVEST จากนั้นกดปุ่ม OK <br><br>
+                                    <center>
+                                        <img src="/IMG/use20.png" alt="Centered Image" class="mb-5" width="750">
+                                    </center><br>
+                                </ul>
+                                20) จะมี User bonanza เพิ่มขึ้นมา <br><br>
+                                <center>
+                                    <img src="/IMG/use21.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                21) คลิกขวาที่ Logins เลือก New Login…เพื่อสร้าง User ctddb <br><br>
+                                <center>
+                                    <img src="/IMG/use22.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                22) หน้าต่าง Login - New คลิก Select a page คลิกเลือก General <br>
+                                <ul>
+                                    กำหนด Login name = ctddb <br>
+                                    เลือก SQL Server authentication แล้วใส่ Password = Password = &lt;&lt;password&gt;&gt;, Confirm password = &lt;&lt;password&gt;&gt; <br>
+                                    แล้วเอาเครื่องหมาย เอาเครื่องหมาย &check; ออกจากช่อง Enforce password policy <br>
+                                    <strong>หมายเหตุ: </strong>สามารถกำหนด Password อื่นได้ ตามต้องการ โดยความยาวไม่เกิน 10 ตัว
+                                </ul><br>
+                                <center>
+                                    <img src="/IMG/use23.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                23) หน้าต่าง Login-New คลิก Select a page คลิกเลือก User Mapping <br>
+                                <ul>
+                                    ทำเครื่องหมาย &check; ตรงชื่อฐานข้อมูล ช่อง Default Schema ให้พิมพ์ INVEST และเลือก role db_owner จากนั้นกดปุ่ม OK <br><br>
+                                    <center>
+                                        <img src="/IMG/use24.png" alt="Centered Image" class="mb-5" width="750">
+                                    </center><br>
+                                </ul>
+                                24) Default Schema ฐานข้อมูลให้ User invest ในหน้าต่าง SQL Server Management Studio เลือก Database คลิกที่ชื่อฐานข้อมูลแล้วขยายออก เลือกที่ Security ขยายออก เลือกที่ Schemas แล้วเลือกที่ INVEST
+                                <ul>
+                                    ยกตัวอย่างฐานข้อมูลชื่อ CTDGSBDB <br>
+                                    Database ➢ CTDGSBDB ➢ Security ➢ Schemas ➢ INVEST <br><br>
+                                    <center>
+                                        <img src="/IMG/use25.png" alt="Centered Image" class="mb-5" width="750">
+                                    </center><br>
+                                </ul>
+                                25) คลิกขวาเลือก Properties <br><br>
+                                <center>
+                                    <img src="/IMG/use26.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                26) จะมีหน้าต่าง Schema Properties - INVEST ขึ้นมา <br><br>
+                                <center>
+                                    <img src="/IMG/use27.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                27) ในช่อง schema owner ให้พิมพ์ ctddb ลงไปแล้ว คลิก OK <br><br>
+                                <center>
+                                    <img src="/IMG/use28.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                            </ul>
+                        </li>
+                        <li>
+                            ตรวจสอบฐานข้อมูล User
+                            <ul>
+                                สามารถตรวจสอบ user ที่สร้างตามข้อ 1. สร้าง User ผ่าน Script หรือ 2. สร้าง User ผ่าน SQL Server Management Studio <br>
+                                มีวิธี Manual ดังนี <br>
+                                a. ในหน้าต่าง SQL Server Management Studio ให้New Connect Database Engine <br><br>
+                                <center>
+                                    <img src="/IMG/use29.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                b. จะมีหน้าต่าง Connect to Server ขึ้นมา ให้ระบุ ชื่อ Server <br>
+                                <ul>
+                                    Authentication = SQL Server Authentication <br>
+                                    Login = bonanza <br>
+                                    Password =bonanza (หรือ password ที่ได้กำหนดไว้) <br><br>
+                                </ul>
+                                <center>
+                                    <img src="/IMG/use30.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                c. ต้องสามารถ connect ได้ <br><br>
+                                <center>
+                                    <img src="/IMG/use31.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                d. ในหน้าต่าง SQL Server Management Studio ท าการ New Connect Database Engine <br><br>
+                                <center>
+                                    <img src="/IMG/use32.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                                e. จะมีหน้าต่าง Connect to Server ขึ้นมา ให้ระบุ ชื่อ Server <br>
+                                <ul>
+                                    Authentication = SQL Server Authentication <br>
+                                    Login = invest <br>
+                                    Password =invest (หรือ password ที่ได้กำหนดไว้) <br><br>
+                                    <center>
+                                        <img src="/IMG/use33.png" alt="Centered Image" class="mb-5" width="750">
+                                    </center><br>
+                                </ul><br>
+                                f. ต้องสามารถ connect ได้ <br><br>
+                                <center><br>
+                                    <img src="/IMG/use34.png" alt="Centered Image" class="mb-5" width="750">
+                                </center><br>
+                            </ul>
+                        </li>
+                    </li>
+                </ol>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

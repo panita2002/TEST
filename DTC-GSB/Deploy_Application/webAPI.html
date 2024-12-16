@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>deploy Bonanza WebAPI</title>
+</head>
+<body>
+    <div class="col-md-9 p-4" id="content-tainer">
+        <div class="mb-5">
+            <a 
+                href="/index.html">ย้อนกลับ
+            </a>
+            <ul>
+                <h3>
+                    deploy Bonanza WebAPI
+                </h3>
+                <ol>
+                    ขั้นตอนการ Deploy Bonanza WebAPI <br>
+                    Login ด้วย user svcctdadmin_dev <br><br>
+                    <ol>
+                        <li>
+                            เปิด Windows Services เพื่อสั่ง Stop Service Tomcat รอจนกว่าจะ stop สำเร็จ
+                        </li>
+                        <li>
+                            ตรวจสอบว่ามี folder install_custodian หรือไม่ ถ้าไม่มีให้สร้าง folder ชื่อ install_custodian ที่ Download
+                        </li>
+                        <li>
+                            Copy Package Server\WebAPI ลงที่เครื่อง path install_custodian
+                        </li>
+                        <li>
+                            เปิด PowerShell ด้วยสิทธิ์ผู้ดูแลระบบ <br><br>
+                            <code>
+                                cd C:\Users\svcctdadmin_dev\Downloads\install_custodian\WebAPI
+                            </code> <br><br>
+                        </li>
+                        <li>
+                            ใช้คำสั่งต่อไปนี้เพื่อ extract ไฟล์ .zip <br><br>
+                            <code>Expand-Archive *.zip webapi
+                            </code> <br><br>
+                        </li>
+                        <li>
+                            ใน folder wwwroot สร้าง folder invest และทำการย้าย file ทั้งหมดใน wwwroot ยกเว้น index.html <br>
+                            ใส่ใน folder invest ที่เพิ่งสร้างและ ลบ file เหล่านี้ใน folder webapi ที่ได้จากการ extract
+                            <ul>
+                                a. webapi\appsetting.json <br>
+                                b. webapi\Config\ webapi.log4net.config <br>
+                                c. webapi\wwwroot\invest\assets\config\environment-config.json หรือ PowerShell <br><br>
+                                <code>.\copypackage.ps1</code> <br><br>
+                            </ul>
+                        </li>
+                        <li>
+                            copy folder webapi ไปวางที่ $BONANZA_HOME\Invest-service
+                        </li>
+                        <li>
+                            ลบ folder WebAPI ออกจาก install_custodian 
+                        </li>
+                    </ol>
+                </ol>
+            </ul>
+        </div>
+        </div>
+    
+</body>
+</html>

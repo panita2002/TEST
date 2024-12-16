@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ขั้นตอนการติดตั้ง</title>
+</head>
+<body>
+    <div class="mb-5">
+        <a
+            href="/index.html">ย้อนกลับ
+        </a>
+        <ul>
+            <h3>
+                ขั้นตอนการติดตั้ง
+            </h3>
+            <ol>
+                <li>
+                    Copy CTD Passbook จาก package supporting_software\branch ติดตั้ง มาไว้ที่ Download directory <br><br>
+                    <center>
+                        <img src="/IMG/step1.png" alt="Centered Image" class="mb-5" width="750">
+                    </center><br>
+                </li>
+                <li>
+                    ติดตั้ง CTD Passbook ให้คลิกขวาที่ setup.bat จากนั้นเลือก Run as administrator ระบบอาจจะแสดงข้อความเตือนจาก User Account Control <br>ให้กด Yes เพื่อทำการติดตั้ง
+                    <center>
+                        <img src="/IMG/step2.png" alt="Centered Image" class="mb-5" width="750">
+                    </center><br>
+                </li>
+                <li>
+                    ระบบแสดงขั้นตอนการติดตั้ง (กด enter เพื่อออกจากหน้าจอนี้) <br><br>
+                    <center>
+                        <img src="/IMG/step3.png" alt="Centered Image" class="mb-5" width="750">
+                    </center><br>
+                </li>
+                <li>
+                    ไปที่ directory C:\ctd-passbook\service <br>
+                </li>
+                <li>
+                    ดับเบิ้ลคลิกที่ install.bat เพื่อติดตั้ง service (ระบบอาจจะแสดงข้อความเตือนจาก User Account Control ให้กด Yes) <br><br>
+                    <center>
+                        <img src="/IMG/step4.png" alt="Centered Image" class="mb-5" width="750">
+                    </center><br>
+                </li>
+                <li>
+                    ระบบแสดงขั้นตอนการติดตั้ง service ระบบควรจะแสดง message "Service 'CTD Passbook (ctd-passbook)' was installed successfully." (กด enter เพื่อออก) <br><br>
+                    <center>
+                        <img src="/IMG/step5.png" alt="Centered Image" class="mb-5" width="950">
+                    </center><br>
+                </li>
+                <li>
+                    เข้าไปที่ service manager (กดปุ่ม Windows + R: เพื่อเปิดกล่องโต้ตอบ Run และพิมพ์คำสั่ง: พิมพ์ services.msc จากนั้นกด Enter) <br><br>
+                    <center>
+                        <img src="/IMG/step6.png" alt="Centered Image" class="mb-5" width="750">
+                    </center><br>
+                </li>
+                <li>
+                    ระบบแสดง service manager จากนั้น เลือก service name CTD Passbook คลิกขวาเลือก properties <br><br>
+                    <center>
+                        <img src="/IMG/step7.png" alt="Centered Image" class="mb-5" width="750">
+                    </center><br>
+                </li>
+                <li>
+                    ไปที่ tab General เลือก Startup Type เป็น Automatic จากนั้นกด Apply
+                </li>
+                <li>
+                    Start service โดยการกดปุ่ม Start <br><br>
+                    <center>
+                        <img src="/IMG/step8.png" alt="Centered Image" class="mb-5" width="750">
+                    </center><br>
+                </li>
+                <li>
+                    ทดสอบการติดตั้ง CTD Passbook ให้กดปุ่ม Windows + R: เพื่อเปิดกล่องโต้ตอบ Run และพิมพ์คำสั่ง: พิมพ์ cmd จากนั้นกด Enter เพื่อเปิด command line ขึ้นมา จากนั้นพิมพ์คำสั่ง curl -ik https://localhost:9443/bond/api/v1/agent/printers/info (ควรจะแสดงผลลัพท์ตามภาพ) <br><br>
+                    <center>
+                        <img src="/IMG/step9.png" alt="Centered Image" class="mb-5" width="1000">
+                    </center><br>
+                </li>
+            </ol>
+        </ul>
+    </div>
+</body>
+</html>

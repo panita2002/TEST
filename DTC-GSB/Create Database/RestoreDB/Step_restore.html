@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ขั้นตอนการ Restore Database
+    </title>
+</head>
+<body>
+    <div class="col-md-9 p-4" id="content-tainer">
+        <div class="mb-5">
+            <a 
+                href="/index.html">ย้อนกลับ
+            </a>
+            <ul>
+                <h3>
+                    ขั้นตอนการ Restore Database
+                </h3>
+                <ol>
+                ขั้นตอนติดตั้งฐานข้อมูลมีหลายวีธี อยู่ที่การเตรียมฐานข้อมูลที่ Backup ไว้ <br>
+                จะกล่าวถึงวีธีนำไฟล์จาก Backup นำมาติดตั้งใช้งาน เตรียมไฟล์ที่ทำการติดตั้งฐานข้อมูลลงบน Server <br>
+                ยกตัวอย่างเช่น C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\Backup <br>
+                Login windows ด้วย user SVCctdadmin
+                    <ol>
+                        <li>
+                            เปิด SSMS เลือกเมนูStart ➢ Microsoft SQL Server Management Studio <br><br>
+                            <center>
+                                <img src="/IMG/rest1.png" alt="Centered Image" class="mb-5" width="750">
+                            </center>
+                        </li><br>
+                        <li>
+                            เลือก Window Authentication ในช่อง และเลือก Trust server certificate แล้ว Connect ดังรูป <br><br>
+                            <center>
+                                <img src="/IMG/rest2.png" alt="Centered Image" class="mb-5" width="750">
+                            </center>
+                        </li><br>
+                        <li>
+                            หน้าต่าง SQL Server Management Studio Object Explorer ดังรูป <br><br>
+                            <center>
+                                <img src="/IMG/rest3.png" alt="Centered Image" class="mb-5" width="750">
+                            </center>
+                        </li><br>
+                        <li>
+                            คลิกขวาที่ Databases จากนั้นเลือก Restore Database… ดังรูป <br><br>
+                            <center>
+                                <img src="/IMG/rest4.png" alt="Centered Image" class="mb-5" width="750">
+                            </center>
+                        </li><br>
+                        <li>
+                            ในหน้าต่าง Restore Databases เลือก Device แล้วทำการกด ... เพื่อเปิดหน้าต่างเลือกไฟล์ดังรูป <br><br>
+                            <center>
+                                <img src="/IMG/rest5.png" alt="Centered Image" class="mb-5" width="750">
+                            </center>
+                        </li><br>
+                        <li>
+                            จะมีหน้าต่าง Select Backup device ให้ คลิก Add ดังรูป <br><br>
+                            <center>
+                                <img src="/IMG/rest6.png" alt="Centered Image" class="mb-5" width="750">
+                            </center>
+                        </li><br>
+                        <li>
+                            หน้าต่าง Locate Backup file ให้เลือก Folder ที่เตรียมไว้แล้วเลือก Backup File ที่ต้องการ Restore แล้วกด OK ดังรูป <br><br>
+                            <center>
+                                <img src="/IMG/rest7.png" alt="Centered Image" class="mb-5" width="750">
+                            </center>
+                        </li><br>
+                        <li>
+                            กลับมาที่หน้าต่าง Select Backup device แล้วกด OK ดังรูป <br><br>
+                            <center>
+                                <img src="/IMG/rest8.png" alt="Centered Image" class="mb-5" width="750">
+                            </center>
+                        </li><br>
+                        <li>
+                            กลับมาที่หน้าต่าง Restore Databases ช่อง Destination ให้ตั้งชื่อฐานข้อมูล แล้วกด OK ดังรูป <br><br>
+                            <center>
+                                <img src="/IMG/rest9.png" alt="Centered Image" class="mb-5" width="750">
+                            </center>
+                        </li><br>
+                        <li>
+                            รอ Progress 100% แล้วกด OK ดังรูป <br><br>
+                            <center>
+                                <img src="/IMG/rest10.png" alt="Centered Image" class="mb-5" width="750">
+                            </center>
+                        </li><br>
+                        <li>
+                            ที่ Object Explorer ในหน้า SQL Server Management Studio จะได้ฐานข้อมูลตามที่ตั้งชื่อไว้ดังรูป <br><br>
+                            <center>
+                                <img src="/IMG/rest11.png" alt="Centered Image" class="mb-5" width="750">
+                            </center>
+                        </li><br>
+                    </ol>
+                </ol>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

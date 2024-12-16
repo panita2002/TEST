@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การ config certificate</title>
+</head>
+<body>
+    <div class="mb-5">
+        <a 
+            href="/index.html">ย้อนกลับ
+        </a>
+        <ul>
+            <h3>
+                การ config certificate
+            </h3>
+            <ul>
+                1. Copy certificate ที่ธนาคาร generate ให้ ctdPrinterService.p12 ไว้ที่ $CTD_PASSBOOK_HOME/cert <br><br>
+                2. เปิด file $CTD_PASSBOOK_HOME\config\application.yaml ตรวจสอบ property server.ssl.keystore <br><br>
+                3. server.ssl.key-store-password ให้ถูกต้อง จากนั้นบันทึก file <br>
+            </ul>
+        </ul>
+    </div>
+</body>
+</html>

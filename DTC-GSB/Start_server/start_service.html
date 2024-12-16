@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การ start server ตามเครื่องต่าง ๆ
+    </title>
+</head>
+<body>
+    <div class="col-md-9 p-4" id="content-tainer">
+        <div class="mb-5">
+            <a 
+                href="/index.html">ย้อนกลับ
+            </a>
+            <ul>
+                <h3>
+                    การ start server ตามเครื่องต่าง ๆ                
+                </h3>
+                <ol>
+                    ระบบ custodian จะลำดับการ start service ดังนี้
+                    <ul><br>
+                        • Start datatbase service (ถ้าต้องมีการ stop/start) <br>
+                        • Start tomcat service (ประกอบไปด้วย 2 service ย่อยภายในคือ CTD-Front และ Gateway) <br>
+                        • Start bonanza webapi 
+                    </ul>
+                </ol>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
