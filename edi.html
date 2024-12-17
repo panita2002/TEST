@@ -64,7 +64,6 @@
         <button onclick="execCommand('justifyLeft')" title="ด้านซ้าย">ซ้าย</button>
         <button onclick="execCommand('justifyCenter')" title="ตรงกลาง">กลาง</button>
         <button onclick="execCommand('justifyRight')" title="ด้านขวา">ขวา</button>
-        <button onclick="execCommand('insertUnorderedList')" title="ย้อนกลับ (Undo)">•</button>
         <!-- ขนาดตัวอักษร -->
         <select onchange="execCommandWithArg('fontSize', this.value)">
             <option value="3">ขนาดตัวอักษร</option>
@@ -78,10 +77,10 @@
         <!-- สีพื้นหลัง -->
         <input type="color" onchange="execCommandWithArg('hiliteColor', this.value)" title="สีพื้นหลัง">
         <!--ปุ่มล้างคำสั่ง-->
-        <button onclick="execCommand('removeFormat')"><i class="fas fa-eraser"></i>ล้าง</button>
+        <button onclick="execCommand('removeFormat')" title="ล้างคำสั่ง"><i class="fas fa-eraser"></i>ล้าง</button>
         <!-- ปุ่มเลือกไฟล์รูปภาพ -->
         <input type="file" id="imageUpload" style="display: none;" accept="image/*" onchange="uploadImage(this)">
-        <button onclick="document.getElementById('imageUpload').click()">
+        <button onclick="document.getElementById('imageUpload').click()" title="แนบไฟล์รูปภาพ">
             <i class="fas fa-image"></i> รูปภาพ
         </button>
 
