@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rich Text Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        .toolbar {
+            display: flex;
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        .toolbar button {
+            border: none;
+            background: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .toolbar button:hover {
+            background-color: #e0e0e0;
+        }
+        #editor {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background: #ffffff;
+            min-height: 300px;
+            margin-top: 10px;
+            outline: none;
+        }
+        .save-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .save-btn:hover {
+            background-color: #45a049;
+        }
+        .preview {
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h2>Rich Text Editor</h2>
+    
+    <!-- Toolbar -->
+    <div class="toolbar">
+        <button onclick="execCommand('bold')"><b>B</b></button>
+        <button onclick="execCommand('italic')"><i>I</i></button>
+        <button onclick="execCommand('underline')"><u>U</u></button>
+        <button onclick="execCommand('justifyLeft')">ซ้าย</button>
+        <button onclick="execCommand('justifyCenter')">กลาง</button>
+        <button onclick="execCommand('justifyRight')">ขวา</button>
+        <button onclick="execCommand('insertOrderedList')">1.</button>
+        <button onclick="execCommand('insertUnorderedList')">•</button>
+    </div>
+
+    <!-- Editor Area -->
+    <div id="editor" contenteditable="true">
+        <!-- สามารถเพิ่มเนื้อหาที่นี่ -->
+    </div>
+
+    <!-- Save Button -->
+    <button class="save-btn" onclick="saveAndShowContent()">บันทึกและแสดงเนื้อหา</button>
+
+    <!-- Preview Area -->
+    <h3>เนื้อหาที่บันทึก:</h3>
+    <div class="preview" id="preview"></div>
+
+    <script>
+        // ฟังก์ชันสำหรับจัดการคำสั่ง
+        function execCommand(command) {
+            document.execCommand(command, false, null);
+        }
+
+        // ฟังก์ชันบันทึกและแสดงเนื้อหา
+        function saveAndShowContent() {
+            // ดึงเนื้อหาจาก Editor
+            const content = document.getElementById('editor').innerHTML;
+
+            // บันทึกเป็นไฟล์ HTML
+            const blob = new Blob([content], { type: "text/html" });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'content.html';
+            link.click();
+
+            // แสดงเนื้อหาที่บันทึกไว้
+            document.getElementById('preview').innerHTML = content;
+        }
+    </script>
+</body>
+</html>
