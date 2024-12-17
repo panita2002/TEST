@@ -56,15 +56,15 @@
 
     <!-- Toolbar -->
     <div class="toolbar">
-        <button onclick="execCommand('undo')" title="ย้อนกลับ (Undo)"><i class='fas'>&#xf2ea;</i>ย้อนกลับ</button>
+        <button onclick="execCommand('undo')" title="ย้อนกลับ (Undo)"><i class="fas fa-undo"></i>ย้อนกลับ</button>
         <button onclick="execCommand('redo')" title="ทำซ้ำ (Redo)"><i class="fas fa-redo"></i>ทำซ้ำ</button>
-        <button onclick="execCommand('bold')"><b>B</b></button>
-        <button onclick="execCommand('italic')"><i>I</i></button>
-        <button onclick="execCommand('underline')"><u>U</u></button>
-        <button onclick="execCommand('justifyLeft')">ซ้าย</button>
-        <button onclick="execCommand('justifyCenter')">กลาง</button>
-        <button onclick="execCommand('justifyRight')">ขวา</button>
-        <button onclick="execCommand('insertUnorderedList')">•</button>
+        <button onclick="execCommand('bold')" title="ตัวหนา"><b>B</b></button>
+        <button onclick="execCommand('italic')" title="ตัวเอียง"><i>I</i></button>
+        <button onclick="execCommand('underline')" title="เส้นใต้"><u>U</u></button>
+        <button onclick="execCommand('justifyLeft')" title="ด้านซ้าย">ซ้าย</button>
+        <button onclick="execCommand('justifyCenter')" title="ตรงกลาง">กลาง</button>
+        <button onclick="execCommand('justifyRight')" title="ด้านขวา">ขวา</button>
+        <button onclick="execCommand('insertUnorderedList')" title="ย้อนกลับ (Undo)">•</button>
         <!-- ขนาดตัวอักษร -->
         <select onchange="execCommandWithArg('fontSize', this.value)">
             <option value="3">ขนาดตัวอักษร</option>
@@ -78,7 +78,7 @@
         <!-- สีพื้นหลัง -->
         <input type="color" onchange="execCommandWithArg('hiliteColor', this.value)" title="สีพื้นหลัง">
         <!--ปุ่มล้างคำสั่ง-->
-        <button onclick="execCommand('removeFormat')"><i style='font-size:24px' class='fas'>&#xf12d;</i> ล้าง</button>
+        <button onclick="execCommand('removeFormat')"><i class="fas fa-eraser"></i>ล้าง</button>
         <!-- ปุ่มเลือกไฟล์รูปภาพ -->
         <input type="file" id="imageUpload" style="display: none;" accept="image/*" onchange="uploadImage(this)">
         <button onclick="document.getElementById('imageUpload').click()">
@@ -152,3 +152,4 @@
     </script>
 </body>
 </html>
+fdgg
