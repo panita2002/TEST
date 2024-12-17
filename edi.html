@@ -29,7 +29,7 @@
             cursor: pointer;
             font-size: 16px;
         }
-        .toolbar button:hover, .toolbar input:hover {
+        .toolbar button:hover {
             background-color: #e0e0e0;
         }
         #editor {
@@ -56,56 +56,31 @@
 
     <!-- Toolbar -->
     <div class="toolbar">
-        <button onclick="execCommand('undo')" title="ย้อนกลับ (Undo)"><i class="fas fa-undo"></i>ย้อนกลับ</button>
-        <button onclick="execCommand('redo')" title="ทำซ้ำ (Redo)"><i class="fas fa-redo"></i>ทำซ้ำ</button>
-        <button onclick="execCommand('bold')" title="ตัวหนา"><b>B</b></button>
-        <button onclick="execCommand('italic')" title="ตัวเอียง"><i>I</i></button>
-        <button onclick="execCommand('underline')" title="เส้นใต้"><u>U</u></button>
-        <button onclick="execCommand('justifyLeft')" title="ด้านซ้าย">ซ้าย</button>
-        <button onclick="execCommand('justifyCenter')" title="ตรงกลาง">กลาง</button>
-        <button onclick="execCommand('justifyRight')" title="ด้านขวา">ขวา</button>
-        <!-- ขนาดตัวอักษร -->
-        <select onchange="execCommandWithArg('fontSize', this.value)">
-            <option value="3">ขนาดตัวอักษร</option>
-            <option value="1">เล็ก</option>
-            <option value="3">ปกติ</option>
-            <option value="5">ใหญ่</option>
-            <option value="7">ใหญ่มาก</option>
-        </select>
-        <!-- สีตัวอักษร -->
-        <input type="color" onchange="execCommandWithArg('foreColor', this.value)" title="สีตัวอักษร">
-        <!-- สีพื้นหลัง -->
-        <input type="color" onchange="execCommandWithArg('hiliteColor', this.value)" title="สีพื้นหลัง">
-        <!--ปุ่มล้างคำสั่ง-->
-        <button onclick="execCommand('removeFormat')" title="ล้างคำสั่ง"><i class="fas fa-eraser"></i>ล้าง</button>
-        <!-- ปุ่มเลือกไฟล์รูปภาพ -->
+        <button onclick="execCommand('undo')" title="ย้อนกลับ (Undo)"><i class="fas fa-undo"></i></button>
+        <button onclick="execCommand('redo')" title="ทำซ้ำ (Redo)"><i class="fas fa-redo"></i></button>
+        <button onclick="execCommand('bold')"><b>B</b></button>
+        <button onclick="execCommand('italic')"><i>I</i></button>
+        <button onclick="execCommand('underline')"><u>U</u></button>
+        <button onclick="execCommand('removeFormat')"><i class="fas fa-eraser"></i> ล้าง</button>
         <input type="file" id="imageUpload" style="display: none;" accept="image/*" onchange="uploadImage(this)">
-        <button onclick="document.getElementById('imageUpload').click()" title="แนบไฟล์รูปภาพ">
-            <i class="fas fa-image"></i> รูปภาพ
-        </button>
-
+        <button onclick="document.getElementById('imageUpload').click()"><i class="fas fa-image"></i> รูปภาพ</button>
     </div>
 
     <!-- Editor Area -->
     <div id="editor" contenteditable="true">
-        <!-- เนื้อหาแก้ไขได้ -->
+        <!-- เนื้อหาที่สามารถแก้ไขได้ -->
     </div>
 
     <!-- Save Button -->
     <button class="save-btn" onclick="saveAndOpenNewPage()">บันทึกและแสดงเนื้อหาในหน้าใหม่</button>
 
     <script>
-        // ฟังก์ชันสำหรับจัดการคำสั่งทั่วไป
+        // ฟังก์ชันสำหรับคำสั่งแก้ไขข้อความ เช่น Undo/Redo
         function execCommand(command) {
             document.execCommand(command, false, null);
         }
 
-        // ฟังก์ชันสำหรับจัดการคำสั่งที่มีอาร์กิวเมนต์ (เช่น สี, ขนาด)
-        function execCommandWithArg(command, arg) {
-            document.execCommand(command, false, arg);
-        }
-
-        // ฟังก์ชันอัปโหลดรูปภาพจากไฟล์
+        // ฟังก์ชันอัปโหลดรูปภาพ
         function uploadImage(input) {
             const file = input.files[0];
             if (file) {
@@ -121,12 +96,11 @@
             }
         }
 
-
         // ฟังก์ชันบันทึกและเปิดหน้าใหม่แสดงเนื้อหา
         function saveAndOpenNewPage() {
             const content = document.getElementById('editor').innerHTML;
 
-            // เปิดหน้าใหม่
+            // เปิดหน้าใหม่และแสดงเนื้อหา
             const newWindow = window.open('', '_blank');
             newWindow.document.write(`
                 <!DOCTYPE html>
