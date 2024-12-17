@@ -80,3 +80,20 @@ a.button {
 a.button:hover {
     background-color: #218838;
 }
+
+.subtopic {
+    margin-left: 20px;
+    border-left: 2px solid #ccc;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.subtopic h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+.subtopic p {
+    font-size: 14px;
+    color: #555;
+}

@@ -3,46 +3,32 @@ include 'db_connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $conn->real_escape_string($_POST['title']);
-    // สำหรับ description จะไม่ใช้ real_escape_string
-    // เพราะต้องการให้แสดง HTML ที่จัดรูปแบบได้
-    $description = $_POST['description'];  // ไม่ต้องใช้ real_escape_string
+    $description = $_POST['description'];
 
-    // ตรวจสอบว่าได้อัปโหลดไฟล์หรือไม่
-    if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
-        // กำหนดโฟลเดอร์ที่ใช้เก็บไฟล์
-        $upload_dir = 'uploads/';  // ใช้ 'uploads/' แทน 'LearnPHP/uploads'
-        $image_path = $upload_dir . basename($_FILES['image']['name']);
+    // เพิ่มคู่มือในตาราง manual
+    $stmt = $conn->prepare("INSERT INTO manual (title, description) VALUES (?, ?)");
+    $stmt->bind_param("ss", $title, $description);
+    if ($stmt->execute()) {
+        $manual_id = $stmt->insert_id;  // รับค่า ID ของคู่มือที่เพิ่ม
 
-        // ตรวจสอบประเภทของไฟล์ (เช่น ให้รับเฉพาะไฟล์ภาพ)
-        $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
-        if (in_array($_FILES['image']['type'], $allowed_types)) {
-            // ตรวจสอบว่าโฟลเดอร์ uploads/ มีอยู่หรือไม่ ถ้าไม่มีก็ให้สร้าง
-            if (!file_exists($upload_dir)) {
-                mkdir($upload_dir, 0777, true); // สร้างโฟลเดอร์ใหม่ให้มีสิทธิ์ทั้งหมด
+        // เพิ่มหัวข้อย่อยถ้ามี
+        if (!empty($_POST['subtopics'])) {
+            foreach ($_POST['subtopics'] as $subtopic) {
+                $sub_title = $conn->real_escape_string($subtopic['title']);
+                $sub_description = $conn->real_escape_string($subtopic['description']);
+
+                // เพิ่มหัวข้อย่อยในตาราง subtopics
+                $sub_stmt = $conn->prepare("INSERT INTO subtopics (manual_id, title, description) VALUES (?, ?, ?)");
+                $sub_stmt->bind_param("iss", $manual_id, $sub_title, $sub_description);
+                $sub_stmt->execute();
             }
-
-            // ย้ายไฟล์ที่อัปโหลดไปยังโฟลเดอร์ที่กำหนด
-            if (move_uploaded_file($_FILES['image']['tmp_name'], $image_path)) {
-                // เพิ่มข้อมูลลงในฐานข้อมูล
-                $stmt = $conn->prepare("INSERT INTO manual (title, description, image_path) VALUES (?, ?, ?)");
-                $stmt->bind_param("sss", $title, $description, $image_path);
-
-                if ($stmt->execute()) {
-                    echo "<p>บันทึกข้อมูลสำเร็จ</p>";
-                    header("Location: index.php");
-                    exit();
-                } else {
-                    echo "<p>เกิดข้อผิดพลาดในการบันทึกข้อมูล: " . $stmt->error . "</p>";
-                }
-            } else {
-                echo "<p>เกิดข้อผิดพลาดในการอัปโหลดไฟล์</p>";
-            }
-        } else {
-            echo "<p>ประเภทไฟล์ไม่ถูกต้อง กรุณาอัปโหลดไฟล์ภาพ</p>";
         }
+
+        echo "<p>บันทึกข้อมูลสำเร็จ</p>";
+        header("Location: index.php");
+        exit();
     } else {
-        // หากไม่ได้เลือกไฟล์
-        echo "<p>กรุณาเลือกไฟล์รูปภาพ</p>";
+        echo "<p>เกิดข้อผิดพลาดในการบันทึกข้อมูล: " . $stmt->error . "</p>";
     }
 }
 ?>
@@ -71,9 +57,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <textarea id="description" name="description" rows="10" required></textarea>
             </div>
 
-            <div class="form-group">
-                <label for="image">Image:</label>
-                <input type="file" id="image" name="image" accept="image/*">
+            <div class="form-group" id="subtopics-container">
+                <h3>หัวข้อย่อย</h3>
+                <div class="subtopic">
+                    <label for="subtopic-title">Subtopic Title:</label>
+                    <input type="text" name="subtopics[0][title]" required>
+                    <label for="subtopic-description">Subtopic Description:</label>
+                    <textarea name="subtopics[0][description]" rows="3" required></textarea>
+                </div>
+                <button type="button" onclick="addSubtopic()">เพิ่มหัวข้อย่อย</button>
             </div>
 
             <button type="submit" class="btn">บันทึก</button>
@@ -81,6 +73,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <a href="index.php" class="btn">กลับไปหน้าหลัก</a>
     </div>
+
+    <script>
+        let subtopicIndex = 1;
+
+        function addSubtopic() {
+            const container = document.getElementById('subtopics-container');
+            const newSubtopic = document.createElement('div');
+            newSubtopic.classList.add('subtopic');
+            newSubtopic.innerHTML = `
+                <label for="subtopic-title">Subtopic Title:</label>
+                <input type="text" name="subtopics[${subtopicIndex}][title]" required>
+                <label for="subtopic-description">Subtopic Description:</label>
+                <textarea name="subtopics[${subtopicIndex}][description]" rows="3" required></textarea>
+            `;
+            container.appendChild(newSubtopic);
+            subtopicIndex++;
+        }
+    </script>
 </body>
 
 </html>
