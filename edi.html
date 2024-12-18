@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rich Text Editor</title>
+    <title>Editor Page</title>
     <!-- FontAwesome สำหรับไอคอน -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
@@ -12,9 +13,11 @@
             background-color: #f9f9f9;
             margin: 20px;
         }
+
         h2 {
             text-align: center;
         }
+
         .toolbar {
             display: flex;
             background-color: #ffffff;
@@ -22,16 +25,22 @@
             padding: 5px;
             gap: 5px;
         }
-        .toolbar button, .toolbar select, .toolbar input {
+
+        .toolbar button,
+        .toolbar select,
+        .toolbar input {
             border: none;
             background: none;
             padding: 8px;
             cursor: pointer;
             font-size: 16px;
         }
-        .toolbar button:hover, .toolbar input:hover {
+
+        .toolbar button:hover,
+        .toolbar input:hover {
             background-color: #e0e0e0;
         }
+
         #editor {
             border: 1px solid #ccc;
             padding: 10px;
@@ -40,6 +49,7 @@
             margin-top: 10px;
             outline: none;
         }
+
         .save-btn {
             margin-top: 10px;
             padding: 10px 20px;
@@ -51,8 +61,9 @@
         }
     </style>
 </head>
+
 <body>
-    <h2>Rich Text Editor</h2>
+    <h2>Editor</h2>
 
     <!-- Toolbar -->
     <div class="toolbar">
@@ -120,30 +131,31 @@
             }
         }
 
-        // ฟังก์ชันบันทึกและเปิดหน้าใหม่แสดงเนื้อหา
         function saveAndOpenNewPage() {
             const content = document.getElementById('editor').innerHTML;
 
             // เปิดหน้าใหม่
             const newWindow = window.open('', '_blank');
             newWindow.document.write(`<!DOCTYPE html>
-                <html lang="en">
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>เนื้อหาที่บันทึกไว้</title>
-                    <style>
-                        body { font-family: Arial, sans-serif; margin: 20px; }
-                        .content { border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9; }
-                    </style>
-                </head>
-                <body>
-                    <h2>เนื้อหาที่คุณบันทึกไว้</h2>
-                    <div class="content">${content}</div>
-                </body>
-                </html>`);
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>เนื้อหาที่บันทึกไว้</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                .content { border: 1px solid #ccc; padding: 10px; background-color: #f9f9f9; }
+            </style>
+        </head>
+        <body>
+            <h2>เนื้อหาที่คุณบันทึกไว้</h2>
+            <div class="content">${content}</div>
+        </body>
+        </html>`);
             newWindow.document.close();
         }
+
     </script>
 </body>
+
 </html>
